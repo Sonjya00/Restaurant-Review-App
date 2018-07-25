@@ -141,7 +141,7 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
     ul.appendChild(createReviewHTML(review));
   });
   container.appendChild(ul);
-}
+};
 
 /**
  * Create review HTML and add it to the webpage.
@@ -175,7 +175,7 @@ fillBreadcrumb = (restaurant=self.restaurant) => {
   const li = document.createElement('li');
   li.innerHTML = restaurant.name;
   breadcrumb.appendChild(li);
-}
+};
 
 /**
  * Get a parameter by name from page URL.
@@ -191,4 +191,4 @@ getParameterByName = (name, url) => {
   if (!results[2])
     return '';
   return decodeURIComponent(results[2].replace(/\+/g, ' '));
-}
+};
