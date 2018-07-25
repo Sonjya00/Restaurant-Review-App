@@ -1,5 +1,6 @@
 const gulp = require('gulp');
 const browserSync = require('browser-sync').create();
+const reload = browserSync.reload;
 //const eslint = require('gulp-eslint');
 
 // //Fix js files
@@ -22,9 +23,11 @@ gulp.task('browser-sync', () => {
 	});
 });
 
-// gulp.task('watch', () =>{
-//   gulp.watch('src/*.html', ['copyHtml']);
-//   gulp.watch('src/img/*', ['imagemin']);
-// });
+gulp.task('watch', () =>{
+	gulp.watch('app/*.html', reload);
+	gulp.watch('app/css/*.css', reload);
+	gulp.watch('app/js/*.js', reload);
+	gulp.watch('app/*.js', reload);
+});
 
-gulp.task('default', ['browser-sync']);
+gulp.task('default', ['watch', 'browser-sync']);
