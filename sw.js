@@ -3,6 +3,10 @@ let urlsToCache = [
   '/',
   'index.html',
   'restaurant.html',
+  //toremove
+  'config.js',
+  'leaflet/leaflet.css',
+  'leaflet/leaflet.js',
   'css/styles.css',
   'data/restaurants.json',
   'sw_registration.js',
@@ -43,6 +47,9 @@ self.addEventListener('activate', event => {
 
 self.addEventListener('fetch', event => {
   let cacheRequest = event.request;
+  // if (cacheRequest.url.indexOf('restaurant.html') !== -1) {
+  //   cacheRequest = new Request('restaurant.html')
+  // }
   event.respondWith(
     caches.match(cacheRequest)
     .then(response => response || fetch(cacheRequest))
