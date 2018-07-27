@@ -6,37 +6,24 @@
 // Theme Colors
 $color-1: #ff6100;
 $color-2: #0275d8;
-$color-3: #0275d8;
-$color-4: #01447e;
-$color-5: #E77D00;
 
 // Plain colors
 $color-white: #fff;
+$color-p-01: #f3f3f3;
+$color-p-02: #eee;
+$color-p-03: #ddd;
+$color-p-04: #ccc;
+$color-p-05: #aaa;
+$color-p-06: #666;
+$color-p-07: #444;
+$color-p-08: #333;
+$color-p-09: #252831;
 $color-black: #000;
-$color-p-01: #fdfdfd;
-$color-p-02: #f3f3f3;
-$color-p-03: #eee;
-$color-p-04: #d9d9d9;
-$color-p-05: #ddd;
-$color-p-06: #ccc;
-$color-p-07: #aaa;
-$color-p-08: #666;
-$color-p-09: #444;
-$color-p-10: #333;
-$color-p-11: #252831;
-
-/*Unused*/
-$color-10: #F1C221;
-$color-20: #ba014e;
-// $color-1: #f18200;
-// $color-2: #3397db;
-// $color-5: #f58500;
 
 // Fonts
 $main-font: Arial, Helvetica, sans-serif;
 
 /* ====================== General ====================== */
-
 
 html {
 	font-size: 62.5%;
@@ -48,7 +35,7 @@ html {
 }
 body {
 	background-color: $color-p-01;
-	color: $color-p-10;
+	color: $color-p-08;
 	font-family: $main-font;
 	font-size: 1.2rem;
 	line-height: 2.5;
@@ -61,7 +48,7 @@ a {
 	text-decoration: none;
 
 	&:hover, &:focus {
-		color: $color-3;
+		color: $color-2;
 		text-decoration: none;
 	}
 	img{
@@ -79,13 +66,13 @@ figure, footer, header, hgroup, menu, nav, section {
 }
 
 .main__container {
-  background-color: $color-p-02;
+  background-color: $color-p-01;
   min-height: 100%;
 }
 
 .footer {
-  background-color: $color-p-09;
-  color: $color-p-07;
+  background-color: $color-p-07;
+  color: $color-p-05;
   font-size: 1.2rem;
   letter-spacing: .1rem;
   padding: 2.5rem;
@@ -100,7 +87,7 @@ $nav-height: 8rem;
 	height: $nav-height;
 
 	&__nav {
-		background-color: $color-p-11;
+		background-color: $color-p-09;
 		text-align: center;
 	  width: 100%;
 	  height: $nav-height;
@@ -120,7 +107,7 @@ $nav-height: 8rem;
 .breadcrumb {
 	padding: 1rem 4rem 1.6rem;
   list-style: none;
-  background-color: $color-p-04;
+  background-color: $color-p-03;
   font-size: 1.6rem;
   margin: 0;
 	width: 50%;
@@ -132,7 +119,7 @@ $nav-height: 8rem;
 
 		/* Add a color to all links inside the list */
 		a {
-	    color: $color-3;
+	    color: $color-2;
 	    text-decoration: none;
 
 			/* Add a color on mouse-over */
@@ -153,7 +140,7 @@ $nav-height: 8rem;
 /* ====================== Map ====================== */
 
 .map-global {
-	background-color: $color-p-06;
+	background-color: $color-p-04;
   height: 40rem;
   width: 100%;
 }
@@ -192,7 +179,7 @@ $nav-height: 8rem;
 /* ====================== Restaurant Listing ====================== */
 
 .restaurants-list {
-  background-color: $color-p-02;
+  background-color: $color-p-01;
   list-style: outside none none;
   margin: 0;
   padding: 3rem 1.5rem 6rem;
@@ -201,7 +188,7 @@ $nav-height: 8rem;
 
 	.restaurant-box {
 	  background-color: $color-white;
-		border: 2px solid $color-p-06;
+		border: 2px solid $color-p-04;
 		border-radius: 1rem;
 		display: inline-block;
 	  margin: 1.2rem;
@@ -211,7 +198,7 @@ $nav-height: 8rem;
 	  max-width: 26rem;
 
 		&__img {
-			background-color: $color-p-06;
+			background-color: $color-p-04;
 			border-radius: 1rem;
 			height: auto;
 			display: block;
@@ -228,7 +215,7 @@ $nav-height: 8rem;
 			text-transform: uppercase;
 		}
 		&__neighborhood {
-			color: $color-3;
+			color: $color-2;
 			font-weight: 700;
 		}
 		&__neighborhood, &__address {
@@ -238,7 +225,7 @@ $nav-height: 8rem;
 		}
 		&__more-btn {
 			background-color: $color-1;
-			border-bottom: 3px solid $color-p-03;
+			border-bottom: 3px solid $color-p-02;
 			border-radius: 4rem;
 			color: $color-white;
 			display: inline-block;
@@ -274,7 +261,7 @@ $nav-height: 8rem;
   width: 50%;
 
 	.map-restaurant {
-	  background-color: $color-p-06;
+	  background-color: $color-p-04;
 	  height: 100%;
 	  width: 100%;
 	}
@@ -298,8 +285,8 @@ $nav-height: 8rem;
 	  margin: 1rem 0;
 	}
 	&__cuisine {
-	  background-color: $color-p-10;
-	  color: $color-p-05;
+	  background-color: $color-p-08;
+	  color: $color-p-04;
 	  font-size: 12pt;
 	  font-weight: 300;
 	  letter-spacing: 1rem;
@@ -310,7 +297,7 @@ $nav-height: 8rem;
 		width: 90%;
 	}
 	&__hours td {
-	  color: $color-p-08;
+	  color: $color-p-06;
 	}
 }
 
@@ -318,7 +305,7 @@ $nav-height: 8rem;
   padding: 3rem 4rem 8rem;
 
 	&__heading {
-	  color: $color-5;
+	  color: $color-1;
 	  font-size: 1.8rem;
 	  font-weight: 300;
 	  letter-spacing: -1px;
@@ -330,7 +317,7 @@ $nav-height: 8rem;
 
 		&__item {
 			background-color: $color-white;
-			border: 2px solid $color-p-02;
+			border: 2px solid $color-p-01;
 			display: block;
 			list-style-type: none;
 			margin: 0 0 3rem;

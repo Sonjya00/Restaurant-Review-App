@@ -1,6 +1,5 @@
 /* CSS Document */
 /* ====================== Variables ====================== */
-/*Unused*/
 /* ====================== General ====================== */
 html {
   font-size: 62.5%; }
@@ -11,7 +10,7 @@ html {
   box-sizing: border-box; }
 
 body {
-  background-color: #fdfdfd;
+  background-color: #f3f3f3;
   color: #333;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.2rem;
@@ -68,7 +67,7 @@ figure, footer, header, hgroup, menu, nav, section {
 .breadcrumb {
   padding: 1rem 4rem 1.6rem;
   list-style: none;
-  background-color: #d9d9d9;
+  background-color: #ddd;
   font-size: 1.6rem;
   margin: 0;
   width: 50%;
@@ -214,7 +213,7 @@ figure, footer, header, hgroup, menu, nav, section {
 
 .restaurant-info__cuisine {
   background-color: #333;
-  color: #ddd;
+  color: #ccc;
   font-size: 12pt;
   font-weight: 300;
   letter-spacing: 1rem;
@@ -230,7 +229,7 @@ figure, footer, header, hgroup, menu, nav, section {
 .reviews {
   padding: 3rem 4rem 8rem; }
   .reviews__heading {
-    color: #E77D00;
+    color: #ff6100;
     font-size: 1.8rem;
     font-weight: 300;
     letter-spacing: -1px;
@@ -252,7 +251,7 @@ figure, footer, header, hgroup, menu, nav, section {
         margin: 0 0 1rem; }
 
 .restaurant-info, .reviews {
-  border-bottom: 1px solid #d9d9d9;
+  border-bottom: 1px solid #ccc;
   border-top: 1px solid #fff;
   padding: 15rem 4rem 3rem;
   width: 50%; }
