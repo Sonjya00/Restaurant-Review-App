@@ -20,7 +20,7 @@ body {
   position: relative; }
 
 a {
-  color: #E77D00;
+  color: #ff6100;
   text-decoration: none; }
   a:hover, a:focus {
     color: #0275d8;
@@ -82,7 +82,7 @@ figure, footer, header, hgroup, menu, nav, section {
       text-decoration: none;
       /* Add a color on mouse-over */ }
       .breadcrumb__li a:hover {
-        color: #E77D00;
+        color: #ff6100;
         text-decoration: none; }
   .breadcrumb__li + li:before {
     padding: .8rem;
@@ -131,22 +131,22 @@ figure, footer, header, hgroup, menu, nav, section {
 .restaurant-box {
   background-color: #fff;
   border: 2px solid #ccc;
-  border-radius: 10px;
+  border-radius: 1rem;
   display: inline-block;
   margin: 1.2rem;
   min-height: 38rem;
-  padding: 0 3rem 2.5rem;
+  padding: 0 0 2.5rem;
   text-align: center;
-  max-width: 30rem; }
+  max-width: 26rem; }
   .restaurant-box__img {
     background-color: #ccc;
+    border-radius: 1rem;
+    height: auto;
     display: block;
     margin: 0;
-    max-width: 100%;
-    min-height: 25rem;
-    min-width: 100%; }
+    width: 100%; }
   .restaurant-box__name {
-    color: #E77D00;
+    color: #ff6100;
     font-size: 1.6rem;
     font-weight: 700;
     letter-spacing: 0;
@@ -161,8 +161,9 @@ figure, footer, header, hgroup, menu, nav, section {
     line-height: 2.4rem;
     font-size: 1.4rem; }
   .restaurant-box__more-btn {
-    background-color: #E77D00;
+    background-color: #ff6100;
     border-bottom: 3px solid #eee;
+    border-radius: 4rem;
     color: #fff;
     display: inline-block;
     font-size: 1.4rem;
@@ -171,6 +172,10 @@ figure, footer, header, hgroup, menu, nav, section {
     text-align: center;
     text-decoration: none;
     text-transform: uppercase; }
+    .restaurant-box__more-btn:hover {
+      background-color: #b34400;
+      color: #fff;
+      text-decoration: none; }
 
 /* ====================== 2nd page - Restaurant Details ====================== */
 .header-secondary {
@@ -192,7 +197,7 @@ figure, footer, header, hgroup, menu, nav, section {
     width: 100%; }
 
 .restaurant-info__name {
-  color: #E77D00;
+  color: #ff6100;
   font-size: 20pt;
   font-weight: 200;
   letter-spacing: 0;
