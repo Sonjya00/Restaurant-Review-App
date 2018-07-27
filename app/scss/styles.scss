@@ -109,6 +109,7 @@ $nav-height: 8rem;
 	padding: 1rem 4rem 1.6rem;
   list-style: none;
   background-color: $color-p-03;
+	opacity: 0.98;
   font-size: 1.6rem;
   margin: 0;
 	width: 50%;
@@ -279,10 +280,11 @@ $nav-height: 8rem;
 .restaurant-info {
 	&__name {
 	  color: $color-1;
-	  font-size: 20pt;
+	  font-size: 3rem;
 	  font-weight: 200;
 	  letter-spacing: 0;
 	  margin: 1.5rem 0 3rem;
+		padding-top: 10rem;
 	  text-transform: uppercase;
 	  line-height: 1.1;
 	}
@@ -290,13 +292,13 @@ $nav-height: 8rem;
 		width: 90%;
 	}
 	&__address {
-	  font-size: 12pt;
+	  font-size: 1.4rem;
 	  margin: 1rem 0;
 	}
 	&__cuisine {
 	  background-color: $color-p-08;
 	  color: $color-p-04;
-	  font-size: 12pt;
+	  font-size: 2rem;
 	  font-weight: 300;
 	  letter-spacing: 1rem;
 	  margin: 0 0 2rem;
@@ -305,9 +307,24 @@ $nav-height: 8rem;
 	  text-transform: uppercase;
 		width: 90%;
 	}
-	&__hours td {
-	  color: $color-p-06;
-		border: 1px solid $color-p-04;
+	&__hours {
+		td {
+	  color: $color-p-07;
+		background-color: #9CDCED;
+		padding-right: 1.8rem;
+		//border: 1px solid $color-p-04;
+		}
+		&--day{
+			font-weight: bold;
+		}
+
+		&__heading {
+			color: $color-1;
+			font-size: 1.8rem;
+			font-weight: 300;
+			letter-spacing: -1px;
+			padding-bottom: .2rem;
+		}
 	}
 }
 
@@ -319,7 +336,7 @@ $nav-height: 8rem;
 	  font-size: 1.8rem;
 	  font-weight: 300;
 	  letter-spacing: -1px;
-	  padding-bottom: 1pt;
+	  padding-bottom: .5rem;
 	}
 	&__list {
 	  margin: 0;
@@ -336,6 +353,26 @@ $nav-height: 8rem;
 			position: relative;
 			width: 85%;
 
+			&-user, &-rating {
+				display: inline-block;
+				padding-right: 4rem;
+			}
+			&-user {
+				font-size: 1.5rem;
+				color: $color-2;
+				font-weight: bold;
+			}
+			&-rating {
+				font-size: 1.5rem;
+				float: right;
+				padding-right: 0;
+				color: $color-1;
+				font-weight: bold;
+			}
+			&-date {
+				font-style: italic;
+			}
+
 			p {
 				margin: 0 0 1rem;
 			}
@@ -346,7 +383,7 @@ $nav-height: 8rem;
 .restaurant-info, .reviews {
   border-bottom: 1px solid $color-p-04;
   border-top: 1px solid $color-white;
-  padding: 15rem 4rem 3rem;
+  padding: 5rem 4rem 3rem;
   width: 50%;
 }
 

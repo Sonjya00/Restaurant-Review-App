@@ -68,6 +68,7 @@ figure, footer, header, hgroup, menu, nav, section {
   padding: 1rem 4rem 1.6rem;
   list-style: none;
   background-color: #ddd;
+  opacity: 0.98;
   font-size: 1.6rem;
   margin: 0;
   width: 50%;
@@ -203,10 +204,11 @@ figure, footer, header, hgroup, menu, nav, section {
 
 .restaurant-info__name {
   color: #ff6100;
-  font-size: 20pt;
+  font-size: 3rem;
   font-weight: 200;
   letter-spacing: 0;
   margin: 1.5rem 0 3rem;
+  padding-top: 10rem;
   text-transform: uppercase;
   line-height: 1.1; }
 
@@ -214,13 +216,13 @@ figure, footer, header, hgroup, menu, nav, section {
   width: 90%; }
 
 .restaurant-info__address {
-  font-size: 12pt;
+  font-size: 1.4rem;
   margin: 1rem 0; }
 
 .restaurant-info__cuisine {
   background-color: #333;
   color: #ccc;
-  font-size: 12pt;
+  font-size: 2rem;
   font-weight: 300;
   letter-spacing: 1rem;
   margin: 0 0 2rem;
@@ -230,8 +232,19 @@ figure, footer, header, hgroup, menu, nav, section {
   width: 90%; }
 
 .restaurant-info__hours td {
-  color: #666;
-  border: 1px solid #ccc; }
+  color: #444;
+  background-color: #9CDCED;
+  padding-right: 1.8rem; }
+
+.restaurant-info__hours--day {
+  font-weight: bold; }
+
+.restaurant-info__hours__heading {
+  color: #ff6100;
+  font-size: 1.8rem;
+  font-weight: 300;
+  letter-spacing: -1px;
+  padding-bottom: .2rem; }
 
 .reviews {
   padding: 3rem 4rem 8rem; }
@@ -240,7 +253,7 @@ figure, footer, header, hgroup, menu, nav, section {
     font-size: 1.8rem;
     font-weight: 300;
     letter-spacing: -1px;
-    padding-bottom: 1pt; }
+    padding-bottom: .5rem; }
   .reviews__list {
     margin: 0;
     padding: 0; }
@@ -254,13 +267,28 @@ figure, footer, header, hgroup, menu, nav, section {
       padding: 0 2rem 2rem;
       position: relative;
       width: 85%; }
+      .reviews__list__item-user, .reviews__list__item-rating {
+        display: inline-block;
+        padding-right: 4rem; }
+      .reviews__list__item-user {
+        font-size: 1.5rem;
+        color: #0275d8;
+        font-weight: bold; }
+      .reviews__list__item-rating {
+        font-size: 1.5rem;
+        float: right;
+        padding-right: 0;
+        color: #ff6100;
+        font-weight: bold; }
+      .reviews__list__item-date {
+        font-style: italic; }
       .reviews__list__item p {
         margin: 0 0 1rem; }
 
 .restaurant-info, .reviews {
   border-bottom: 1px solid #ccc;
   border-top: 1px solid #fff;
-  padding: 15rem 4rem 3rem;
+  padding: 5rem 4rem 3rem;
   width: 50%; }
 
 .footer--secondary {
