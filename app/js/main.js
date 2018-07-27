@@ -160,23 +160,30 @@ createRestaurantHTML = (restaurant) => {
 	li.className = 'restaurant-box'
 
 	const image = document.createElement('img');
-	image.className = 'restaurant-img';
+	image.className = 'restaurant-box__img';
 	image.src = DBHelper.imageUrlForRestaurant(restaurant);
 	li.append(image);
 
-	const name = document.createElement('h1');
+	const name = document.createElement('h3');
+	name.className = 'restaurant-box__name'
 	name.innerHTML = restaurant.name;
 	li.append(name);
 
 	const neighborhood = document.createElement('p');
+	neighborhood.className = 'restaurant-box__neighborhood'
 	neighborhood.innerHTML = restaurant.neighborhood;
 	li.append(neighborhood);
 
 	const address = document.createElement('p');
+
 	address.innerHTML = restaurant.address;
+	address.className = 'restaurant-box__address';
+	// Add line break to make the address areas more regular
+	address.innerHTML= address.innerHTML.replace(/,/g, ", <br />");
 	li.append(address);
 
 	const more = document.createElement('a');
+	more.className = 'restaurant-box__more-btn'
 	more.innerHTML = 'View Details';
 	more.href = DBHelper.urlForRestaurant(restaurant);
 	li.append(more);
