@@ -161,25 +161,30 @@ createReviewHTML = (review) => {
   const li = document.createElement('li');
   li.className = 'reviews__list__item';
 
-  const name = document.createElement('p');
+  const upperBar = document.createElement('div');
+  upperBar.className = 'reviews__list__item-upperBar';
+
+  const name = document.createElement('span');
   name.className = 'reviews__list__item-user';
   name.innerHTML = review.name;
-  li.appendChild(name);
+  upperBar.appendChild(name);
 
-  const rating = document.createElement('p');
+  const date = document.createElement('spacing');
+  date.className = 'reviews__list__item-date';
+  date.innerHTML = review.date;
+  upperBar.appendChild(date);
+
+  const rating = document.createElement('span');
   rating.className = 'reviews__list__item-rating';
   rating.innerHTML = `Rating: ${review.rating}`;
-  li.appendChild(rating);
+  upperBar.appendChild(rating);
+
+  li.appendChild(upperBar);
 
   const comments = document.createElement('p');
   comments.className = 'reviews__list__item-comments';
   comments.innerHTML = review.comments;
   li.appendChild(comments);
-
-  const date = document.createElement('p');
-  date.className = 'reviews__list__item-date';
-  date.innerHTML = review.date;
-  li.appendChild(date);
 
   return li;
 }
