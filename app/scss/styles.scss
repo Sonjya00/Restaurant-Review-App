@@ -33,6 +33,7 @@ $font-size-xl: 2.8rem;
 $font-size-xxl: 3.2rem;
 
 $nav-height: 8rem;
+$nav-height-2: 6rem;
 
 /* ====================== Mixins ====================== */
 
@@ -98,14 +99,22 @@ body {
 	}
 }
 
+.header-secondary {
+  // position: fixed;
+  // top: 0;
+  width: 100%;
+}
+
 .breadcrumb {
   background-color: rgba($color-p-04, .95);
+	height: $nav-height-2;
 	font-size: $font-size-m;
 	list-style: none;
 	margin: 0;
 	opacity: 0.98;
 	padding: 1rem 4rem 1rem;
-	width: 50%;
+	width: 100%;
+	z-index: 100000;
   // width: calc(50% - 8rem);
 
 	&__li {
@@ -131,20 +140,11 @@ body {
   width: 100%;
 }
 
-.map-restaurant__container {
-  background: blue none repeat scroll 0 0;
-  height: calc(100% - #{$nav-height});
-	left: 50%;
-  position: fixed;
-  top: $nav-height;
-  width: 45%;
-	@include border-default;
-
-	.map-restaurant {
-	  background-color: $color-p-04;
-	  height: 100%;
-	  width: 100%;
-	}
+.map-restaurant {
+	background-color: $color-p-04;
+	height: 100%;
+	width: 100%;
+	position:static;
 }
 
 /* ====================== Restaurant Filtering ====================== */
@@ -283,61 +283,75 @@ body {
 
 /* ====================== 2nd page - Restaurant Details ====================== */
 
-.header-secondary {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
+.restaurant__heading {
+	color: $color-orange-1;
+	font-size: $font-size-xl;
+	font-weight: 200;
+	letter-spacing: 3px;
+	line-height: 1.1;
+	margin: 8rem 0 3rem;
+	text-align: center;
+	text-transform: uppercase;
 }
 
-.restaurant-info, .reviews {
+.restaurant {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	//margin-top: 8rem;
+	//margin-top: calc(#{$nav-height} + #{$nav-height-2});
+
+	&__cover {
+		width: 50%;
+		margin: 2rem auto;
+		order: 1;
+
+		&__img {
+			border-radius: 5px;
+			@include box-shadow-default;
+			max-height: 36rem;
+			margin: 0 auto;
+			max-width: 80%;
+			height: auto;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		&__cuisine {
+			background-color: $color-p-08;
+			color: $color-p-04;
+			font-size: $font-size-l;
+			font-weight: 300;
+			letter-spacing: 1rem;
+			margin: 0 auto;
+			padding: .2rem 0;
+			text-align: center;
+			text-transform: uppercase;
+			width: 80%;
+		}
+	}
+}
+
+.restaurant, .reviews {
   border-bottom: 1px solid $color-p-04;
-  border-top: 1px solid $color-white;
-  width: 50%;
+  border-top: 1px solid $color-p-04;
+
 }
 
-.restaurant-info {
+.restaurant-overview {
+		order: 2;
+		display: block;
 		font-size: $font-size-m;
-		padding: 5rem 4rem 3rem;
+		padding: 2rem 4rem 3rem;
+		margin: 0;
 		text-align: center;
+		width: 50%;
 
 	&__strong-text {
 		color: $color-blue-1;
 		font-weight: bold;
 		text-transform: uppercase;
-	}
-
-	&__name {
-	  color: $color-orange-1;
-	  font-size: $font-size-xl;
-	  font-weight: 200;
-	  letter-spacing: 0;
-		line-height: 1.1;
-	  margin: 1.5rem 0 3rem;
-		padding-top: 10rem;
-	  text-transform: uppercase;
-	}
-	&__img {
-		border-radius: 5px;
-		@include box-shadow-default;
-		max-height: 30rem;
-		margin: 0 auto;
-		width: 100%;
-	}
-	&__cuisine {
-	  background-color: $color-p-08;
-	  color: $color-p-04;
-	  font-size: $font-size-l;
-	  font-weight: 300;
-	  letter-spacing: 1rem;
-	  margin: 0 auto;
-	  padding: .2rem 0;
-	  text-align: center;
-	  text-transform: uppercase;
-		width: 100%;
-	}
-	&__summary {
-		margin: 1rem;
 	}
 	&__average-rating {
 		display: inline-block;
@@ -351,7 +365,6 @@ body {
 			border-bottom: 1px solid $color-p-05;
 			font-size: $font-size-s;
 			//border: 1px solid $color-p-04;
-			padding-right: 1.8rem;
 		}
 		&--day{
 			background-color: $color-p-01;
@@ -366,6 +379,14 @@ body {
 		letter-spacing: -1px;
 		padding-top: 1rem;
 	}
+}
+
+.map-restaurant__container {
+	border-top: 4rem;
+	order: 3;
+  height: 40rem;
+  width: 100%;
+	@include border-default;
 }
 
 /* ====================== Reviews section ====================== */
@@ -450,6 +471,7 @@ body {
   padding: 2.5rem;
   text-align: center;
   text-transform: uppercase;
+	width: 100%;
 	a {
 		@include font-style-link($color-orange-1, $color-blue-2);
 	}
@@ -458,5 +480,4 @@ body {
 .footer--secondary {
   bottom: 0;
   position: absolute;
-  width: 50%;
 }

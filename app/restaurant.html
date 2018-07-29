@@ -24,30 +24,35 @@
     </ul>
   </header>
 
-
   <main id="maincontent" class="main__container">
+    <h2 id="restaurant-name" class="restaurant__heading"></h2>
 
-    <section id="map-container" class="map-restaurant__container">
-      <div id="map" class="map-restaurant"></div>
-    </section>
-    <!-- End map -->
     <!-- Beginning restaurant -->
-    <section id="restaurant-container" class="restaurant-info">
-      <h2 id="restaurant-name" class="restaurant-info__name"></h2>
-      <img id="restaurant-img" class="restaurant-info__img">
-      <p id="restaurant-cuisine" class="restaurant-info__cuisine"></p>
-      <div class="restaurant-info__summary">
-        <p id="averageRating" class="restaurant-info__average-rating">
-        <p id="restaurant-address" class="restaurant-info__address"></p>
+    <section id="restaurant-container" class="restaurant">
+      <div class="restaurant__cover">
+        <img id="restaurant-img" class="restaurant__cover__img">
+        <p id="restaurant-cuisine" class="restaurant__cover__cuisine"></p>
       </div>
-      <table id="restaurant-hours" class="restaurant-info__hours"></table>
+
+      <div class="restaurant-overview">
+        <p id="averageRating" class="restaurant-overview__average-rating">
+        <p id="restaurant-address" class="restaurant-overview__address"></p>
+        <table id="restaurant-hours" class="restaurant-overview__hours"></table>
+      </div>
+
+      <div id="map-container" class="map-restaurant__container">
+        <div id="map" class="map-restaurant"></div>
+      </div>
+
     </section>
     <!-- end restaurant -->
+
     <!-- Beginning reviews -->
     <section id="reviews-container" class="reviews">
       <ul id="reviews-list" class="reviews__list"></ul>
     </section>
     <!-- End reviews -->
+
   </main>
   <!-- End main -->
 

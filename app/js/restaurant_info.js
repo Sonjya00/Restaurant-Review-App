@@ -91,10 +91,12 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
     count += restaurant.reviews[i].rating;
     average = (count/restaurant.reviews.length).toFixed(2);;
   }
-  averageRating.innerHTML = `<span class="restaurant-info__strong-text">Rating: </span>${average} (${restaurant.reviews.length} reviews)`;
+  averageRating.innerHTML = `<span class="restaurant-overview__strong-text">Rating: </span>${average} (${restaurant.reviews.length} reviews)`;
 
   const address = document.getElementById('restaurant-address');
-  address.innerHTML = `<span class="restaurant-info__strong-text"> Address: </span>${restaurant.address}`;
+  address.innerHTML = `${restaurant.address}`;
+
+  // address.innerHTML = `<span class="restaurant-overview__strong-text"> Address: </span>${restaurant.address}`;
 
   const image = document.getElementById('restaurant-img');
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
@@ -119,7 +121,7 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
     const row = document.createElement('tr');
 
     const day = document.createElement('td');
-    day.className = 'restaurant-info__hours--day'
+    day.className = 'restaurant-overview__hours--day'
     day.innerHTML = key;
     row.appendChild(day);
 
