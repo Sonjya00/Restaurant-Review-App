@@ -4,11 +4,11 @@
 /* ====================== Variables ====================== */
 
 // Theme Colors
-$color-1: #ff6100;
-$color-2: #0275d8;
-$color-3: #3390D6;
+$color-orange-1: #ff6100;
+$color-blue-1: #0275d8;
+$color-blue-2: #3390D6;
 $color-blue-3: #9CDCED;
-$color-4: #a2b1b2;
+$color-gray-1: #a2b1b2;
 
 // Plain colors
 $color-white: #fff;
@@ -27,7 +27,7 @@ $color-black: #000;
 $main-font: Arial, Helvetica, sans-serif;
 $font-size-s: 1.4rem;
 $font-size-m: 1.6rem;
-$font-size-l: 2rem;
+$font-size-l: 1.8rem;
 $font-size-xl: 2.8rem;
 $font-size-xxl: 3.2rem;
 
@@ -38,6 +38,10 @@ $font-size-xxl: 3.2rem;
 		&:focus {
 			color: $color-hf;
 		}
+	}
+
+	@mixin standard-border {
+		border: 1px solid $color-p-05;
 	}
 
 /* ====================== General ====================== */
@@ -51,7 +55,7 @@ html {
 	box-sizing: border-box;
 }
 body {
-	background-color: $color-4;
+	background-color: $color-gray-1;
 	color: $color-p-08;
 	font-family: $main-font;
 	font-size: $font-size-s;
@@ -71,10 +75,10 @@ figure, footer, header, hgroup, menu, nav, section {
 
 .main__container {
   background-color: $color-p-01;
-	border: 1px double $color-p-05;
-	max-width: 114rem;
 	margin: 0 auto;
+	max-width: 114rem;
   min-height: 100%;
+	@include standard-border;
 }
 
 .footer {
@@ -86,7 +90,7 @@ figure, footer, header, hgroup, menu, nav, section {
   text-align: center;
   text-transform: uppercase;
 	a {
-		@include link-font-style($color-1, $color-3);
+		@include link-font-style($color-orange-1, $color-blue-2);
 	}
 }
 
@@ -98,9 +102,9 @@ $nav-height: 8rem;
 
 	&__nav {
 		background-color: $color-p-09;
+		height: $nav-height;
 		text-align: center;
 	  width: 100%;
-	  height: $nav-height;
 	}
 	&__main-heading {
 	  margin: auto;
@@ -115,26 +119,26 @@ $nav-height: 8rem;
 }
 
 .breadcrumb {
-	padding: 1rem 4rem 1.6rem;
-  list-style: none;
   background-color: $color-p-03;
+	font-size: $font-size-m;
+	list-style: none;
+	margin: 0;
 	opacity: 0.98;
-  font-size: $font-size-m;
-  margin: 0;
+	padding: 1rem 4rem 1.6rem;
 	width: 50%;
   // width: calc(50% - 8rem);
 
 	&__li {
     display: inline;
 		a {
-			@include link-font-style($color-3, $color-1);
+			@include link-font-style($color-blue-2, $color-orange-1);
 		}
 	}
 	/* Add a slash symbol (/) before/behind each list item */
 	&__li+li:before {
-    padding: .8rem;
     color: $color-black;
     content: "/\00a0";
+		padding: .8rem;
 	}
 }
 
@@ -149,10 +153,11 @@ $nav-height: 8rem;
 /* ====================== Restaurant Filtering ====================== */
 
 .filters {
-  width: 100%;
-  height: 8rem;
-  background: linear-gradient(to bottom, $color-2, $color-3, $color-2);
-  align-items: center;
+	align-items: center;
+  background: linear-gradient(to right, $color-blue-2, $color-blue-1, $color-blue-2);
+  height: 9rem;
+	width: 100%;
+	@include standard-border;
 
 	&__heading {
 	  color: $color-white;
@@ -161,13 +166,13 @@ $nav-height: 8rem;
 	  line-height: 1;
 	  margin: 0 2rem;
 		padding-top: 1.2rem;
-		text-transform: uppercase;
 		text-align: center;
+		text-transform: uppercase;
 	}
 
 	&__select {
 	  background-color: $color-white;
-	  border: 1px solid $color-white;
+	  border: 1px solid $color-p-01;
 	  font-size: $font-size-s;
 	  height: 3.5rem;
 	  letter-spacing: 0;
@@ -179,8 +184,8 @@ $nav-height: 8rem;
 
 		&:focus {
 			outline: none;
-			border:1px solid $color-1;
-    	box-shadow: 5px 0 20px $color-1;
+			border:1px solid $color-orange-1;
+    	box-shadow: 1px 0 10px $color-orange-1, -1px 0 10px $color-orange-1;
 		}
 	}
 }
@@ -191,21 +196,21 @@ $nav-height: 8rem;
   background-color: $color-p-02;
   list-style: outside none none;
   margin: 0;
-  padding: 3rem .2rem 6rem;
+  padding: 3rem .1rem 3rem;
   text-align: center;
 }
 
 	.restaurant-box {
 	  background-color: $color-white;
 		border: 1px solid $color-p-03;
-		box-shadow: 2px 2px 1rem rgba($color-black, .2);
 		border-radius: .8rem;
+		box-shadow: 2px 2px 1rem rgba($color-black, .2);
 		display: inline-block;
 	  margin: 1.2rem;
+		max-width: 26rem;
 	  min-height: 38rem;
 	  padding: 0 0 2.5rem;
 	  text-align: center;
-	  max-width: 26rem;
 		transition: all .2s;
 
 		&:hover {
@@ -215,17 +220,20 @@ $nav-height: 8rem;
 		&__img {
 			background-color: $color-p-04;
 			border-radius: 1rem;
-			height: auto;
+			box-shadow: 2px 2px 1rem rgba($color-black, .2);
 			display: block;
+			height: auto;
 			margin: 1rem auto 0;
 			width: 90%;
 		}
 		&__name {
-			color: $color-1;
+			background: linear-gradient(to left, $color-orange-1, #db0045);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
 			display: inline-block;
-			height: 4.6rem;
 			font-size: $font-size-l;
-			font-weight: 500;
+			font-weight: 520;
+			height: 4.6rem;
 			letter-spacing: .8px;
 			line-height: 1.3;
 			margin: 2rem 0 1rem;
@@ -233,21 +241,21 @@ $nav-height: 8rem;
 			width: 90%;
 		}
 		&__neighborhood {
-			color: $color-2;
-			font-weight: 700;
+			color: $color-blue-1;
+			font-weight: 600;
 		}
 		&__neighborhood, &__address {
-			margin: 0;
+			font-size: $font-size-s;
 			line-height: 2.4rem;
-			font-size: $font-size-m;
+			margin: 0;
 		}
 		&__more-btn,
 		&__more-btn:focus {
-			background-color: lighten($color-1, 10%);
-			//background: linear-gradient($color-1, #db0045);
-			border-bottom: 3px solid $color-p-02;
-			border-radius: 1.5rem;
-			box-shadow: /*inset 0 2px 10px $color-p-02, */2px 2px 10px rgba($color-black, .3);
+			background-color: lighten($color-orange-1, 10%);
+			//background: linear-gradient($color-orange-1, #db0045);
+			border: 1px solid $color-p-03;
+			border-radius: .5rem;
+			box-shadow: /*inset 0 2px 10px $color-p-02, */2px 2px 1rem rgba($color-black, .2);
 			display: inline-block;
 			font-size: $font-size-s;
 			letter-spacing: .2rem;
@@ -259,10 +267,10 @@ $nav-height: 8rem;
 			@include link-font-style($color-white, $color-white)
 
 			&:hover {
-				background-color: darken($color-1, 15%);
+				background-color: darken($color-orange-1, 15%);
 			}
 			&:active{
-				background-color: lighten($color-1, 15%);
+				background-color: lighten($color-orange-1, 15%);
 				transform:translateY(.1rem);
 			}
 		}
@@ -279,12 +287,12 @@ $nav-height: 8rem;
 
 .map-restaurant__container {
   background: blue none repeat scroll 0 0;
-	border: 1px solid $color-p-05;
   height: calc(100% - #{$nav-height});
+	left: 50%;
   position: fixed;
-  left: 50%;
   top: $nav-height;
   width: 45%;
+	@include standard-border;
 
 	.map-restaurant {
 	  background-color: $color-p-04;
@@ -297,19 +305,19 @@ $nav-height: 8rem;
 		text-align: center;
 
 	&__name {
-	  color: $color-1;
+	  color: $color-orange-1;
 	  font-size: $font-size-xl;
 	  font-weight: 200;
 	  letter-spacing: 0;
+		line-height: 1.1;
 	  margin: 1.5rem 0 3rem;
 		padding-top: 10rem;
 	  text-transform: uppercase;
-	  line-height: 1.1;
 	}
 	&__img {
+		max-height: 30rem;
 		margin: 0 auto;
 		width: 100%;
-		max-height: 30rem;
 	}
 	&__address {
 	  font-size: $font-size-m;
@@ -328,22 +336,22 @@ $nav-height: 8rem;
 		width: 100%;
 	}
 	&__hours {
-		width: 100%;
 		background-color: $color-p-04;
 		color: $color-p-07;
 		td {
-		border-bottom: 1px solid $color-p-05;
-		padding-right: 1.8rem;
-		//border: 1px solid $color-p-04;
+			border-bottom: 1px solid $color-p-05;
+			padding-right: 1.8rem;
+			//border: 1px solid $color-p-04;
+			width: 100%;
 		}
 		&--day{
-			color: $color-2;
-			font-weight: bold;
 			background-color: $color-p-02;
+			color: $color-blue-1;
+			font-weight: bold;
 		}
 	}
 	&__heading {
-		color: $color-1;
+		color: $color-orange-1;
 		font-size: $font-size-xl;
 		font-weight: 300;
 		letter-spacing: -1px;
@@ -355,7 +363,7 @@ $nav-height: 8rem;
   padding: 3rem 4rem 8rem;
 
 	&__heading {
-	  color: $color-1;
+	  color: $color-orange-1;
 	  font-size: $font-size-xl;
 	  font-weight: 300;
 	  letter-spacing: -1px;
@@ -387,17 +395,17 @@ $nav-height: 8rem;
 			}
 			&-user {
 				font-size: $font-size-m;
-				color: $color-2;
+				color: $color-blue-1;
 				font-weight: bold;
 			}
 			&-rating {
+				background-color: $color-orange-1;
 				color: $color-white;
 				font-size: $font-size-m;
+				font-weight: bold;
 				float: right;
 				line-height: 2rem;
 				padding: .2rem;
-				background-color: $color-1;
-				font-weight: bold;
 				text-transform: uppercase;
 			}
 			&-date {
