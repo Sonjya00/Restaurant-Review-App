@@ -64,10 +64,6 @@ body {
 	position: relative;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  margin: 0 0 2rem;
-}
-
 article, aside, canvas, details, figcaption,
 figure, footer, header, hgroup, menu, nav, section {
 	display: block;
@@ -302,7 +298,14 @@ $nav-height: 8rem;
 }
 
 .restaurant-info {
+		font-size: $font-size-m;
 		text-align: center;
+
+	&__strong-text {
+		color: $color-blue-1;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
 
 	&__name {
 	  color: $color-orange-1;
@@ -319,10 +322,6 @@ $nav-height: 8rem;
 		margin: 0 auto;
 		width: 100%;
 	}
-	&__address {
-	  font-size: $font-size-m;
-	  margin: 1rem 0;
-	}
 	&__cuisine {
 	  background-color: $color-p-08;
 	  color: $color-p-04;
@@ -335,17 +334,27 @@ $nav-height: 8rem;
 	  text-transform: uppercase;
 		width: 100%;
 	}
+	&__summary {
+		margin: 1rem;
+	}
+	&__average-rating {
+		//background-color: $color-orange-1;
+		display: inline-block;
+		padding: 0 2rem;
+		//color: #fff;
+	}
 	&__hours {
-		background-color: $color-p-04;
+		background-color: $color-p-03;
 		color: $color-p-07;
+		width: 100%;
 		td {
 			border-bottom: 1px solid $color-p-05;
-			padding-right: 1.8rem;
+			font-size: $font-size-s;
 			//border: 1px solid $color-p-04;
-			width: 100%;
+			padding-right: 1.8rem;
 		}
 		&--day{
-			background-color: $color-p-02;
+			background-color: $color-p-01;
 			color: $color-blue-1;
 			font-weight: bold;
 		}

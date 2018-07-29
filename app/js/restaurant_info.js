@@ -83,8 +83,18 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   const name = document.getElementById('restaurant-name');
   name.innerHTML = restaurant.name;
 
+// Add average rating and total reviews to the info on top
+  const averageRating = document.getElementById('averageRating');
+  let count = 0;
+  let average = 0;
+  for (let i = 0; i < restaurant.reviews.length; i++) {
+    count += restaurant.reviews[i].rating;
+    average = (count/restaurant.reviews.length).toFixed(2);;
+  }
+  averageRating.innerHTML = `<span class="restaurant-info__strong-text">Rating: </span>${average} (${restaurant.reviews.length} reviews)`;
+
   const address = document.getElementById('restaurant-address');
-  address.innerHTML = restaurant.address;
+  address.innerHTML = `<span class="restaurant-info__strong-text"> Address: </span>${restaurant.address}`;
 
   const image = document.getElementById('restaurant-img');
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
