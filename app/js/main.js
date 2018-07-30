@@ -186,6 +186,7 @@ createRestaurantHTML = (restaurant) => {
 
 	const more = document.createElement('a');
 	more.className = 'restaurant-box__more-btn'
+	more.setAttribute('role', 'button');
 	more.innerHTML = 'View Details';
 	more.href = DBHelper.urlForRestaurant(restaurant);
 	li.append(more);

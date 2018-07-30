@@ -31,18 +31,24 @@
 
     <!-- Beginning restaurant -->
     <section id="restaurant-container" class="restaurant">
+
+
       <div class="restaurant__cover">
+          <p id="averageRating" class="restaurant__average-rating"></p>
         <img id="restaurant-img" class="restaurant__cover__img">
         <p id="restaurant-cuisine" class="restaurant__cover__cuisine"></p>
       </div>
 
-      <div class="restaurant-overview">
-        <p id="averageRating" class="restaurant-overview__average-rating">
-        <p id="restaurant-address" class="restaurant-overview__address"></p>
-        <table id="restaurant-hours" class="restaurant-overview__hours"></table>
+      <div class="restaurant__overview">
+        <table id="restaurant-hours" class="restaurant__overview__hours">
+          <tr>
+            <th colspan="2">Hours</th>
+          </tr>
+        </table>
       </div>
 
       <div id="map-container" class="map-restaurant__container">
+        <p id="restaurant-address" class="restaurant__address"></p>
         <div id="map" class="map-restaurant"></div>
       </div>
 

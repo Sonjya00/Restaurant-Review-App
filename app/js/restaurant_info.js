@@ -94,8 +94,8 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   averageRating.innerHTML = `<p><span class="restaurant-overview__strong-text">Rating: </span>${average} (${restaurant.reviews.length} reviews)</p>`;
 
   const address = document.getElementById('restaurant-address');
-  // address.innerHTML = `<p>${restaurant.address}</p>`;
-  address.innerHTML = `<span class="restaurant-overview__strong-text"> Address: </span>${restaurant.address}`;
+  address.innerHTML = `<p>${restaurant.address}</p>`;
+  // address.innerHTML = `<span class="restaurant-overview__strong-text"> Address: </span>${restaurant.address}`;
 
   const image = document.getElementById('restaurant-img');
   // Add average rating and total reviews to the info on top

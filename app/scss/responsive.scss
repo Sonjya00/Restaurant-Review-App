@@ -32,7 +32,7 @@ html {
   order: 1;
   width: 500px;
 }
-.restaurant-overview {
+.restaurant__overview {
 	order: 2;
 	width: 100%;
 }
@@ -54,8 +54,8 @@ html {
 @media screen and (min-width: 480px) {
   .header__link {
     font-size: $font-size-xxl;
-    letter-spacing: .6rem;
     font-weight: 200;
+    letter-spacing: .6rem;
   }
   .filters {
     height: 9rem;
@@ -67,7 +67,7 @@ html {
   }
   .restaurant__heading {
     font-size: $font-size-xl;
-      letter-spacing: 3px;
+    letter-spacing: 3px;
   }
 }
 
@@ -81,10 +81,10 @@ html {
 /* ====================== Fourth Breakpoint ====================== */
 @media screen and (min-width: 830px) {
   .restaurant__cover {
-    width: 50%;
     order: 1;
+    width: 50%;
   }
-  .restaurant-overview {
+  .restaurant__overview {
   		order: 3;
   		width: 100%;
     }
@@ -106,10 +106,10 @@ html {
     font-size: 62.5%;
   }
   .restaurant__cover {
-    width: 50%;
     order: 1;
+    width: 50%;
   }
-  .restaurant-overview {
+  .restaurant__overview {
   		order: 2;
   		width: 50%;
     }

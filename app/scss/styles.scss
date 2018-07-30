@@ -18,8 +18,8 @@ $color-p-02: #eee;
 $color-p-03: #ddd;
 $color-p-04: #ccc;
 $color-p-05: #aaa;
-$color-p-06: #666;
-$color-p-07: #444;
+// $color-p-06: #666;
+// $color-p-07: #444;
 $color-p-08: #333;
 $color-p-09: #252831;
 $color-black: #000;
@@ -47,18 +47,27 @@ $nav-height-2: 6rem;
 }
 
 @mixin font-style-link($color-default, $color-hf) {
-		color: $color-default;
-		text-decoration: none;
-		&:hover,
-		&:focus {
-			color: $color-hf;
-		}
+	color: $color-default;
+	text-decoration: none;
+	&:hover,
+	&:focus {
+		color: $color-hf;
 	}
+}
 
 @mixin color-gradient-redorange {
 	background: linear-gradient(to left, $color-red-1, $color-orange-1, $color-red-1);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
+}
+
+@mixin border-radius-top-label {
+	border-radius: 20px 0 0 0;
+}
+
+@mixin colors-top-label {
+	background-color: $color-p-08;
+	color: $color-p-03;
 }
 
 /* ====================== General ====================== */
@@ -100,8 +109,8 @@ body {
 	  width: 100%;
 	}
 	&__link {
-	  text-transform: uppercase;
 		@include font-style-link($color-white, $color-blue-3);
+	  text-transform: uppercase;
 	}
 }
 
@@ -113,8 +122,8 @@ body {
 
 .breadcrumb {
   background-color: rgba($color-p-04, 100%);
-	height: $nav-height-2;
 	font-size: $font-size-s;
+	height: $nav-height-2;
 	list-style: none;
 	opacity: 1;
 	padding: 1rem 2rem 1rem;
@@ -125,8 +134,8 @@ body {
     display: inline-block;
 		height: 1rem;
 		a {
-			margin-left: .8rem;
 			@include font-style-link(darken($color-blue-1, 15%), $color-orange-1);
+			margin-left: .8rem;
 		}
 	}
 	/* Add a slash symbol (/) before/behind each list item */
@@ -148,8 +157,8 @@ body {
 .map-restaurant {
 	background-color: $color-p-04;
 	height: 100%;
-	width: 100%;
 	position:static;
+	width: 100%;
 }
 
 /* ====================== Restaurant Filtering ====================== */
@@ -297,41 +306,24 @@ body {
 }
 
 .restaurant {
-	height: 100%;
-	width: 100%;
 	display: flex;
 	flex-wrap: wrap;
+	height: 100%;
+	width: 100%;
 	//margin-top: 8rem;
 	//margin-top: calc(#{$nav-height} + #{$nav-height-2});
-
-	&__cover {
-		// width: 100%;
-		// order: 1;
-		margin: 2rem auto;
-
-		&__img {
-			border-radius: 5px;
-			@include box-shadow-default;
-			max-height: 36rem;
-			margin: 0 auto;
-			max-width: 80%;
-			height: auto;
-			display: block;
-			margin-left: auto;
-			margin-right: auto;
-		}
-		&__cuisine {
-			background-color: $color-p-08;
-			color: $color-p-04;
-			font-size: $font-size-m;
-			font-weight: 300;
-			letter-spacing: 1rem;
-			margin: 0 auto;
-			padding: .2rem 0;
-			text-align: center;
-			text-transform: uppercase;
-			width: 80%;
-		}
+	&__average-rating {
+		@include border-radius-top-label;
+		@include colors-top-label;
+		display: inline-block;
+		top:0;
+		font-size: $font-size-s;
+		padding: 0 1rem;
+		position: absolute;
+		right: 50%;
+		text-align: right;
+		transform:translateX(50%);
+		width: 80%;
 	}
 }
 
@@ -340,9 +332,31 @@ body {
   border-top: 1px solid $color-p-04;
 }
 
-.restaurant-overview {
-		// order: 2;
-		// width: 100%;
+.restaurant__cover {
+	margin: 2rem auto;
+	position: relative;
+	&__img {
+		display: block;
+		@include box-shadow-default;
+		max-height: 36rem;
+		margin: 3rem auto 0;
+		max-width: 80%;
+		height: auto;
+	}
+	&__cuisine {
+		@include colors-top-label;
+		font-size: $font-size-m;
+		font-weight: 300;
+		letter-spacing: 1rem;
+		margin: 0 auto;
+		padding: .2rem 0;
+		text-align: center;
+		text-transform: uppercase;
+		width: 80%;
+	}
+}
+
+.restaurant__overview {
 		display: block;
 		font-size: $font-size-xs;
 		padding: 2rem 4rem 3rem;
@@ -354,15 +368,20 @@ body {
 		font-weight: bold;
 		text-transform: uppercase;
 	}
-	&__average-rating {
-		display: inline-block;
-		padding: 0 2rem;
-		font-size: $font-size-s;
-	}
 	&__hours {
 		background-color: $color-p-03;
+		@include border-radius-top-label;
 		color: $color-p-09;
+		margin: 4rem 0;
 		width: 100%;
+		th {
+			@include border-radius-top-label;
+			@include colors-top-label;
+			font-weight: 300;
+			font-size: $font-size-m;
+			letter-spacing: .5rem;
+			text-transform: uppercase;
+		}
 		td {
 			border-bottom: 1px solid $color-p-05;
 			font-size: $font-size-xs;
@@ -374,21 +393,26 @@ body {
 			font-weight: bold;
 		}
 	}
-	&__heading {
-		color: $color-orange-1;
-		font-size: $font-size-xl;
-		font-weight: 300;
-		letter-spacing: -1px;
-		padding-top: 1rem;
-	}
+	// &__heading {
+	// 	color: $color-orange-1;
+	// 	font-size: $font-size-xl;
+	// 	font-weight: 300;
+	// 	letter-spacing: -1px;
+	// 	padding-top: 1rem;
+	// }
 }
 
 .map-restaurant__container {
-	margin: 4rem 0;
-	// order: 3;
-	// width: 100%;
-  height: 40rem;
 	@include border-default;
+	@include border-radius-top-label;
+	height: 40rem;
+	margin: 2rem 0;
+
+	.restaurant__address {
+		@include border-radius-top-label;
+		@include colors-top-label;
+		text-align: center;
+	}
 }
 
 /* ====================== Reviews section ====================== */
@@ -398,8 +422,8 @@ body {
 	&__heading {
 	  @include color-gradient-redorange;
 	  font-weight: 300;
-		text-align: center;
 		padding-bottom: .5rem;
+		text-align: center;
 	}
 	&__list {
 		margin: 0;
@@ -407,29 +431,26 @@ body {
 
 		&__item {
 			background-color: $color-white;
-			border-radius: 5px;
+			@include border-radius-top-label;
 			@include box-shadow-default;
 			display: block;
 			list-style-type: none;
+			margin: 0 0 3rem;
 			overflow: hidden;
 			//padding: 0 2rem 2rem;
 			position: relative;
 			width: 100%;
-			margin: 0 0 3rem;
 
 			&:last-of-type {
 				margin-bottom: 10rem;
 			}
-
 			&-upperBar {
-				width: 100%;
-				background-color: $color-p-07;
+				@include colors-top-label;
 				height: 4.5rem;
+				width: 100%;
 			}
-
 			&-user, &-date {
 				display: inline-block;
-				color: white;
 			}
 			&-user {
 				padding-right: 4rem;
@@ -445,8 +466,8 @@ body {
 				font-weight: bold;
 				text-transform: uppercase;
 				font-size: $font-size-s;
-				padding: .5rem 1rem;
 				margin: .5rem;
+				padding: .5rem 1rem;
 			}
 			&-date {
 				font-style: italic;
@@ -454,9 +475,9 @@ body {
 				margin-right: 1rem;
 			}
 			&-comments {
-				text-align: justify;
 				font-size: $font-size-xs;
 				margin: 2.8rem;
+				text-align: justify;
 			}
 		}
 	}
