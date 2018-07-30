@@ -20,39 +20,37 @@ body {
   position: relative; }
 
 /* ====================== Navigation ====================== */
-.header {
-  height: 8rem; }
-  .header__nav {
-    background-color: #252831;
-    height: 8rem;
-    text-align: center;
-    width: 100%; }
-  .header__link {
-    font-size: 3.2rem;
-    font-weight: 200;
-    letter-spacing: 1.2rem;
-    text-transform: uppercase;
-    color: #fff;
-    text-decoration: none; }
-    .header__link:hover, .header__link:focus {
-      color: #9CDCED; }
+.header__nav {
+  background-color: #252831;
+  height: 8rem;
+  text-align: center;
+  width: 100%; }
+
+.header__link {
+  font-size: 3.2rem;
+  font-weight: 200;
+  letter-spacing: 1.2rem;
+  text-transform: uppercase;
+  color: #fff;
+  text-decoration: none; }
+  .header__link:hover, .header__link:focus {
+    color: #9CDCED; }
 
 .header-secondary {
   width: 100%; }
 
 .breadcrumb {
-  background-color: rgba(204, 204, 204, 0.95);
+  background-color: #cccccc;
   height: 6rem;
   font-size: 1.6rem;
   list-style: none;
-  margin: 0;
-  opacity: 0.98;
+  opacity: 1;
   padding: 1rem 4rem 1rem;
   width: 100%;
-  z-index: 100000;
   /* Add a slash symbol (/) before/behind each list item */ }
   .breadcrumb__li {
-    display: inline-block; }
+    display: inline-block;
+    height: 1rem; }
     .breadcrumb__li a {
       margin-left: 1rem;
       color: #3390D6;
@@ -194,7 +192,7 @@ body {
   font-weight: 200;
   letter-spacing: 3px;
   line-height: 1.1;
-  margin: 8rem 0 3rem;
+  margin: 2rem 0;
   text-align: center;
   text-transform: uppercase; }
 
@@ -267,7 +265,7 @@ body {
     padding-top: 1rem; }
 
 .map-restaurant__container {
-  border-top: 4rem;
+  margin: 4rem 0;
   order: 3;
   height: 40rem;
   width: 100%;

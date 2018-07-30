@@ -82,7 +82,10 @@ body {
 /* ====================== Navigation ====================== */
 
 .header {
-	height: $nav-height;
+
+	// :not(.header-secondary, breadcrumb) {
+	// 	height: $nav-height;
+	// }
 
 	&__nav {
 		background-color: $color-p-09;
@@ -100,25 +103,24 @@ body {
 }
 
 .header-secondary {
-  // position: fixed;
-  // top: 0;
   width: 100%;
+	// position: fixed;
+	// top: 0;
 }
 
 .breadcrumb {
-  background-color: rgba($color-p-04, .95);
+  background-color: rgba($color-p-04, 100%);
 	height: $nav-height-2;
 	font-size: $font-size-m;
 	list-style: none;
-	margin: 0;
-	opacity: 0.98;
+	opacity: 1;
 	padding: 1rem 4rem 1rem;
 	width: 100%;
-	z-index: 100000;
   // width: calc(50% - 8rem);
 
 	&__li {
     display: inline-block;
+		height: 1rem;
 		a {
 			margin-left: 1rem;
 			@include font-style-link($color-blue-2, $color-orange-1);
@@ -289,7 +291,7 @@ body {
 	font-weight: 200;
 	letter-spacing: 3px;
 	line-height: 1.1;
-	margin: 8rem 0 3rem;
+	margin: 2rem 0;
 	text-align: center;
 	text-transform: uppercase;
 }
@@ -333,10 +335,9 @@ body {
 	}
 }
 
-.restaurant, .reviews {
+.restaurant, .reviews, {
   border-bottom: 1px solid $color-p-04;
   border-top: 1px solid $color-p-04;
-
 }
 
 .restaurant-overview {
@@ -382,7 +383,7 @@ body {
 }
 
 .map-restaurant__container {
-	border-top: 4rem;
+	margin: 4rem 0;
 	order: 3;
   height: 40rem;
   width: 100%;
