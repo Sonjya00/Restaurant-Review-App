@@ -24,11 +24,12 @@ $color-p-08: #333;
 $color-p-09: #252831;
 $color-black: #000;
 
-// Fonts
 $main-font: Arial, Helvetica, sans-serif;
-$font-size-s: 1.4rem;
-$font-size-m: 1.6rem;
-$font-size-l: 1.8rem;
+
+$font-size-xs: 1.4rem;
+$font-size-s: 1.6rem;
+$font-size-m: 1.8rem;
+$font-size-l: 2.4rem;
 $font-size-xl: 2.8rem;
 $font-size-xxl: 3.2rem;
 
@@ -54,11 +55,17 @@ $nav-height-2: 6rem;
 		}
 	}
 
+@mixin color-gradient-redorange {
+	background: linear-gradient(to left, $color-red-1, $color-orange-1, $color-red-1);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
 /* ====================== General ====================== */
 
-html {
-	font-size: 62.5%;
-}
+// html {
+// 	font-size: 62.5%;
+// }
 * {
 	margin: 0;
 	padding: 0;
@@ -68,7 +75,7 @@ body {
 	background-color: $color-gray-1;
 	color: $color-p-08;
 	font-family: $main-font;
-	font-size: $font-size-s;
+	font-size: $font-size-xs;
 	line-height: 2.5;
 	margin: 0;
 	position: relative;
@@ -82,7 +89,6 @@ body {
 /* ====================== Navigation ====================== */
 
 .header {
-
 	// :not(.header-secondary, breadcrumb) {
 	// 	height: $nav-height;
 	// }
@@ -94,9 +100,6 @@ body {
 	  width: 100%;
 	}
 	&__link {
-	  font-size: $font-size-xxl;
-	  font-weight: 200;
-	  letter-spacing: 1.2rem;
 	  text-transform: uppercase;
 		@include font-style-link($color-white, $color-blue-3);
 	}
@@ -111,7 +114,7 @@ body {
 .breadcrumb {
   background-color: rgba($color-p-04, 100%);
 	height: $nav-height-2;
-	font-size: $font-size-m;
+	font-size: $font-size-s;
 	list-style: none;
 	opacity: 1;
 	padding: 1rem 4rem 1rem;
@@ -122,7 +125,7 @@ body {
     display: inline-block;
 		height: 1rem;
 		a {
-			margin-left: 1rem;
+			margin-left: .9rem;
 			@include font-style-link($color-blue-2, $color-orange-1);
 		}
 	}
@@ -154,13 +157,13 @@ body {
 .filters {
 	align-items: center;
   background: linear-gradient(to right, $color-blue-2, $color-blue-1, $color-blue-2);
-  height: 9rem;
+
 	width: 100%;
 	@include border-default;
 
 	&__heading {
 	  color: $color-white;
-	  font-size: $font-size-l;
+	  font-size: $font-size-m;
 	  font-weight: 400;
 	  line-height: 1;
 	  margin: 0 2rem;
@@ -172,12 +175,11 @@ body {
 	&__select {
 	  background-color: $color-white;
 	  border: 1px solid $color-p-01;
-	  font-size: $font-size-s;
+	  font-size: $font-size-xs;
 	  height: 3.5rem;
 	  letter-spacing: 0;
-		margin: .8rem 4rem 2rem;
 	  padding: 0 1rem;
-	  width: calc((100% - 18rem)/2 );
+	  // width: calc((100% - 18rem)/2 );
 
 		&:focus {
 			border: 1px solid $color-orange-1;
@@ -234,11 +236,9 @@ body {
 			width: 90%;
 		}
 		&__name {
-			background: linear-gradient(to left, $color-orange-1, $color-red-1);
-			-webkit-background-clip: text;
-			-webkit-text-fill-color: transparent;
+			@include color-gradient-redorange;
 			display: inline-block;
-			font-size: $font-size-l;
+			font-size: $font-size-m;
 			font-weight: 520;
 			height: 4.6rem;
 			letter-spacing: .8px;
@@ -252,7 +252,7 @@ body {
 			font-weight: 600;
 		}
 		&__neighborhood, &__address {
-			font-size: $font-size-s;
+			font-size: $font-size-xs;
 			line-height: 2.4rem;
 			margin: 0;
 		}
@@ -264,7 +264,7 @@ body {
 			border-radius: .5rem;
 			@include box-shadow-default;
 			display: inline-block;
-			font-size: $font-size-s;
+			font-size: $font-size-xs;
 			letter-spacing: .2rem;
 			margin: 1.5rem 0 0;
 			padding: .5rem 1.5rem;
@@ -286,7 +286,7 @@ body {
 /* ====================== 2nd page - Restaurant Details ====================== */
 
 .restaurant__heading {
-	color: $color-orange-1;
+	@include color-gradient-redorange;
 	font-size: $font-size-xl;
 	font-weight: 200;
 	letter-spacing: 3px;
@@ -305,9 +305,9 @@ body {
 	//margin-top: calc(#{$nav-height} + #{$nav-height-2});
 
 	&__cover {
-		width: 50%;
+		// width: 100%;
+		// order: 1;
 		margin: 2rem auto;
-		order: 1;
 
 		&__img {
 			border-radius: 5px;
@@ -323,7 +323,7 @@ body {
 		&__cuisine {
 			background-color: $color-p-08;
 			color: $color-p-04;
-			font-size: $font-size-l;
+			font-size: $font-size-m;
 			font-weight: 300;
 			letter-spacing: 1rem;
 			margin: 0 auto;
@@ -341,13 +341,13 @@ body {
 }
 
 .restaurant-overview {
-		order: 2;
+		// order: 2;
+		// width: 100%;
 		display: block;
-		font-size: $font-size-m;
+		font-size: $font-size-xs;
 		padding: 2rem 4rem 3rem;
 		margin: 0;
 		text-align: center;
-		width: 50%;
 
 	&__strong-text {
 		color: $color-blue-1;
@@ -357,6 +357,7 @@ body {
 	&__average-rating {
 		display: inline-block;
 		padding: 0 2rem;
+		font-size: $font-size-s;
 	}
 	&__hours {
 		background-color: $color-p-03;
@@ -364,7 +365,7 @@ body {
 		width: 100%;
 		td {
 			border-bottom: 1px solid $color-p-05;
-			font-size: $font-size-s;
+			font-size: $font-size-xs;
 			//border: 1px solid $color-p-04;
 		}
 		&--day{
@@ -384,28 +385,28 @@ body {
 
 .map-restaurant__container {
 	margin: 4rem 0;
-	order: 3;
+	// order: 3;
+	// width: 100%;
   height: 40rem;
-  width: 100%;
 	@include border-default;
 }
 
 /* ====================== Reviews section ====================== */
 
 .reviews {
-  padding: 3rem 4rem 3rem;
-
+	padding: 3rem 4rem 3rem;
 	&__heading {
-	  color: $color-orange-1;
-	  font-size: $font-size-xl;
+	  @include color-gradient-redorange;
 	  font-weight: 300;
-	  letter-spacing: -1px;
-	  padding-bottom: .5rem;
 		text-align: center;
+
+		font-size: $font-size-xl;
+		letter-spacing: -1px;
+		padding-bottom: .5rem;
 	}
 	&__list {
-	  margin: 0;
-	  padding: 0;
+		margin: 0;
+		padding: 0;
 
 		&__item {
 			background-color: $color-white;
@@ -413,50 +414,52 @@ body {
 			@include box-shadow-default;
 			display: block;
 			list-style-type: none;
-			margin: 0 0 3rem;
 			overflow: hidden;
 			//padding: 0 2rem 2rem;
 			position: relative;
 			width: 100%;
+			margin: 0 0 3rem;
 
 			&:last-of-type {
 				margin-bottom: 10rem;
 			}
 
 			&-upperBar {
-				height: 4.5rem;
 				width: 100%;
 				background-color: $color-p-07;
+				height: 4.5rem;
 			}
 
 			&-user, &-date {
 				display: inline-block;
-				padding-right: 4rem;
 				color: white;
 			}
 			&-user {
-				font-size: $font-size-l;
+				padding-right: 4rem;
 				color: $color-blue-3;
 				font-weight: bold;
+				font-size: $font-size-s;
 				padding-left: 2rem;
 			}
 			&-rating {
 				background: linear-gradient(to bottom left, $color-orange-1, $color-red-1);
+				border-radius: 3px;
 				color: $color-white;
-				font-size: $font-size-m;
 				font-weight: bold;
-				float: right;
-				height: 100%;
-				padding: 0 2rem;
 				text-transform: uppercase;
+				font-size: $font-size-s;
+				padding: .5rem 1rem;
+				margin: .5rem;
 			}
 			&-date {
 				font-style: italic;
+				float: right;
+				margin-right: 1rem;
 			}
 			&-comments {
-				font-size: $font-size-s;
-				margin: 2.8rem;
 				text-align: justify;
+				font-size: $font-size-xs;
+				margin: 2.8rem;
 			}
 		}
 	}
@@ -467,7 +470,7 @@ body {
 .footer {
   background-color: $color-p-07;
   color: $color-p-05;
-  font-size: $font-size-s;
+  font-size: $font-size-xs;
   letter-spacing: .1rem;
   padding: 2.5rem;
   text-align: center;

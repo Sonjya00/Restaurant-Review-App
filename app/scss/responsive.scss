@@ -1,0 +1,91 @@
+@import "styles.scss";
+
+/* ====================== XS Screens ====================== */
+
+html {
+  font-size: 62.5%;
+}
+
+.header__link {
+  font-size: $font-size-l;
+  font-weight: 100;
+  letter-spacing: 0;
+}
+.filters {
+  height: 12rem;
+}
+.filters__select {
+  display: block;
+  margin: .5rem auto;
+  width: 80%;
+}
+
+/* ====================== Restaurant Listing ====================== */
+//TBD
+
+/* ====================== 2nd page - Restaurant Details ====================== */
+
+.restaurant__cover {
+  order: 1;
+  width: 500px;
+}
+.restaurant-overview {
+	order: 2;
+	width: 100%;
+}
+.map-restaurant__container {
+	order: 3;
+  width: 100%;
+}
+
+/* ====================== First Breakpoint ====================== */
+@media screen and (min-width: 350px) {
+  .header__link {
+    font-size: $font-size-xl;
+    font-weight: 100;
+    letter-spacing: .1rem;
+  }
+}
+
+/* ====================== Second Breakpoint ====================== */
+@media screen and (min-width: 480px) {
+  .header__link {
+    font-size: $font-size-xxl;
+    letter-spacing: .6rem;
+    font-weight: 200;
+  }
+  .filters {
+    height: 9rem;
+  }
+  .filters__select {
+    display: inline-block;
+    margin: .8rem 4rem 2rem;
+    width: calc((100% - 18rem)/2 );
+  }
+}
+
+/* ====================== Third Breakpoint ====================== */
+@media screen and (min-width: 570px) {
+  .header__link {
+    letter-spacing: 1.1rem;
+  }
+}
+
+  /* ====================== Fourth breakpoint ====================== */
+@media screen and (min-width: 980px) {
+  html {
+    font-size: 62.5%;
+  }
+  .restaurant__cover {
+    width: 50%;
+    order: 1;
+  }
+  .restaurant-overview {
+  		order: 2;
+  		width: 50%;
+    }
+  .map-restaurant__container {
+  	order: 3;
+    width: 100%;
+  }
+}

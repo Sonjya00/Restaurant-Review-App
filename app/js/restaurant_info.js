@@ -91,10 +91,10 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
     count += restaurant.reviews[i].rating;
     average = (count/restaurant.reviews.length).toFixed(2);;
   }
-  averageRating.innerHTML = `<span class="restaurant-overview__strong-text">Rating: </span>${average} (${restaurant.reviews.length} reviews)`;
+  averageRating.innerHTML = `<p><span class="restaurant-overview__strong-text">Rating: </span>${average} (${restaurant.reviews.length} reviews)</p>`;
 
   const address = document.getElementById('restaurant-address');
-  address.innerHTML = `${restaurant.address}`;
+  address.innerHTML = `<p>${restaurant.address}</p>`;
 
   // address.innerHTML = `<span class="restaurant-overview__strong-text"> Address: </span>${restaurant.address}`;
 
@@ -176,12 +176,12 @@ createReviewHTML = (review) => {
   date.innerHTML = review.date;
   upperBar.appendChild(date);
 
+  li.appendChild(upperBar);
+
   const rating = document.createElement('span');
   rating.className = 'reviews__list__item-rating';
   rating.innerHTML = `Rating: ${review.rating}`;
-  upperBar.appendChild(rating);
-
-  li.appendChild(upperBar);
+  li.appendChild(rating);
 
   const comments = document.createElement('p');
   comments.className = 'reviews__list__item-comments';
