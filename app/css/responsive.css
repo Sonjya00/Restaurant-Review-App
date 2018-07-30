@@ -39,15 +39,15 @@ body {
   font-size: 1.6rem;
   list-style: none;
   opacity: 1;
-  padding: 1rem 4rem 1rem;
+  padding: 1rem 2rem 1rem;
   width: 100%;
   /* Add a slash symbol (/) before/behind each list item */ }
   .breadcrumb__li {
     display: inline-block;
     height: 1rem; }
     .breadcrumb__li a {
-      margin-left: .9rem;
-      color: #3390D6;
+      margin-left: .8rem;
+      color: #014c8c;
       text-decoration: none; }
       .breadcrumb__li a:hover, .breadcrumb__li a:focus {
         color: #ff6100; }
@@ -154,7 +154,7 @@ body {
     line-height: 2.4rem;
     margin: 0; }
   .restaurant-box__more-btn, .restaurant-box__more-btn:focus {
-    background-color: #ff8133;
+    background-image: linear-gradient(to bottom, #ff6100, #db0045);
     border: 1px solid #ddd;
     border-radius: .5rem;
     box-shadow: 2px 2px 1rem rgba(0, 0, 0, 0.2);
@@ -171,7 +171,7 @@ body {
     .restaurant-box__more-btn:hover, .restaurant-box__more-btn:focus, .restaurant-box__more-btn:focus:hover, .restaurant-box__more-btn:focus:focus {
       color: #fff; }
     .restaurant-box__more-btn:hover, .restaurant-box__more-btn:focus:hover {
-      background-color: #b34400; }
+      background-image: linear-gradient(to bottom, #b34400, #8f002d); }
     .restaurant-box__more-btn:active, .restaurant-box__more-btn:focus:active {
       background-color: #ff904d;
       transform: translateY(0.1rem); }
@@ -229,7 +229,9 @@ body {
   margin: 0;
   text-align: center; }
   .restaurant-overview__strong-text {
-    color: #0275d8;
+    background: linear-gradient(to left, #db0045, #ff6100, #db0045);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-weight: bold;
     text-transform: uppercase; }
   .restaurant-overview__average-rating {
@@ -238,14 +240,14 @@ body {
     font-size: 1.6rem; }
   .restaurant-overview__hours {
     background-color: #ddd;
-    color: #444;
+    color: #252831;
     width: 100%; }
     .restaurant-overview__hours td {
       border-bottom: 1px solid #aaa;
       font-size: 1.4rem; }
     .restaurant-overview__hours--day {
       background-color: #f3f3f3;
-      color: #0275d8;
+      color: #20679d;
       font-weight: bold; }
   .restaurant-overview__heading {
     color: #ff6100;
@@ -268,8 +270,6 @@ body {
     -webkit-text-fill-color: transparent;
     font-weight: 300;
     text-align: center;
-    font-size: 2.8rem;
-    letter-spacing: -1px;
     padding-bottom: .5rem; }
   .reviews__list {
     margin: 0;
@@ -319,8 +319,8 @@ body {
 
 /* ====================== Footer ====================== */
 .footer {
-  background-color: #444;
-  color: #aaa;
+  background-color: #333;
+  color: #ddd;
   font-size: 1.4rem;
   letter-spacing: .1rem;
   padding: 2.5rem;
@@ -328,10 +328,10 @@ body {
   text-transform: uppercase;
   width: 100%; }
   .footer a {
-    color: #ff6100;
+    color: #ff904d;
     text-decoration: none; }
     .footer a:hover, .footer a:focus {
-      color: #3390D6; }
+      color: #9CDCED; }
 
 .footer--secondary {
   bottom: 0;
@@ -356,6 +356,10 @@ html {
 
 /* ====================== Restaurant Listing ====================== */
 /* ====================== 2nd page - Restaurant Details ====================== */
+.restaurant__heading {
+  font-size: 2.4rem;
+  letter-spacing: 1px; }
+
 .restaurant__cover {
   order: 1;
   width: 500px; }
@@ -386,7 +390,10 @@ html {
   .filters__select {
     display: inline-block;
     margin: .8rem 4rem 2rem;
-    width: calc((100% - 18rem)/2); } }
+    width: calc((100% - 18rem)/2); }
+  .restaurant__heading {
+    font-size: 2.8rem;
+    letter-spacing: 3px; } }
 
 /* ====================== Third Breakpoint ====================== */
 @media screen and (min-width: 570px) {

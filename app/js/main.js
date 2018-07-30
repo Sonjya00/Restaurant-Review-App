@@ -159,14 +159,16 @@ createRestaurantHTML = (restaurant) => {
 	const li = document.createElement('li');
 	li.className = 'restaurant-box'
 
-	const image = document.createElement('img');
-	image.className = 'restaurant-box__img';
-	image.src = DBHelper.imageUrlForRestaurant(restaurant);
-	li.append(image);
-
 	const name = document.createElement('h3');
 	name.className = 'restaurant-box__name'
 	name.innerHTML = restaurant.name;
+
+	const image = document.createElement('img');
+	image.className = 'restaurant-box__img';
+	image.setAttribute('alt', `Photo of ${restaurant.name}`);
+	image.src = DBHelper.imageUrlForRestaurant(restaurant);
+
+	li.append(image);
 	li.append(name);
 
 	const neighborhood = document.createElement('p');

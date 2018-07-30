@@ -117,7 +117,7 @@ body {
 	font-size: $font-size-s;
 	list-style: none;
 	opacity: 1;
-	padding: 1rem 4rem 1rem;
+	padding: 1rem 2rem 1rem;
 	width: 100%;
   // width: calc(50% - 8rem);
 
@@ -125,8 +125,8 @@ body {
     display: inline-block;
 		height: 1rem;
 		a {
-			margin-left: .9rem;
-			@include font-style-link($color-blue-2, $color-orange-1);
+			margin-left: .8rem;
+			@include font-style-link(darken($color-blue-1, 15%), $color-orange-1);
 		}
 	}
 	/* Add a slash symbol (/) before/behind each list item */
@@ -258,8 +258,8 @@ body {
 		}
 		&__more-btn,
 		&__more-btn:focus {
-			background-color: lighten($color-orange-1, 10%);
-			//background: linear-gradient($color-orange-1, $color-red-1);
+			//background-color: lighten($color-orange-1, 10%);
+			background-image: linear-gradient(to bottom, $color-orange-1, $color-red-1);
 			border: 1px solid $color-p-03;
 			border-radius: .5rem;
 			@include box-shadow-default;
@@ -274,7 +274,7 @@ body {
 			@include font-style-link($color-white, $color-white)
 
 			&:hover {
-				background-color: darken($color-orange-1, 15%);
+				background-image: linear-gradient(to bottom, darken($color-orange-1, 15%), darken($color-red-1, 15%));
 			}
 			&:active{
 				background-color: lighten($color-orange-1, 15%);
@@ -350,7 +350,7 @@ body {
 		text-align: center;
 
 	&__strong-text {
-		color: $color-blue-1;
+		@include color-gradient-redorange;
 		font-weight: bold;
 		text-transform: uppercase;
 	}
@@ -361,7 +361,7 @@ body {
 	}
 	&__hours {
 		background-color: $color-p-03;
-		color: $color-p-07;
+		color: $color-p-09;
 		width: 100%;
 		td {
 			border-bottom: 1px solid $color-p-05;
@@ -370,7 +370,7 @@ body {
 		}
 		&--day{
 			background-color: $color-p-01;
-			color: $color-blue-1;
+			color: darken($color-blue-2, 15%);
 			font-weight: bold;
 		}
 	}
@@ -399,9 +399,6 @@ body {
 	  @include color-gradient-redorange;
 	  font-weight: 300;
 		text-align: center;
-
-		font-size: $font-size-xl;
-		letter-spacing: -1px;
 		padding-bottom: .5rem;
 	}
 	&__list {
@@ -468,8 +465,8 @@ body {
 /* ====================== Footer ====================== */
 
 .footer {
-  background-color: $color-p-07;
-  color: $color-p-05;
+  background-color: $color-p-08;
+  color: $color-p-03;
   font-size: $font-size-xs;
   letter-spacing: .1rem;
   padding: 2.5rem;
@@ -477,7 +474,7 @@ body {
   text-transform: uppercase;
 	width: 100%;
 	a {
-		@include font-style-link($color-orange-1, $color-blue-2);
+		@include font-style-link(lighten($color-orange-1, 15%), $color-blue-3);
 	}
 }
 

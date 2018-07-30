@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -32,10 +32,10 @@
     <section>
       <div class="filters">
         <h2 class="filters__heading">Filter Results</h2>
-          <select id="neighborhoods-select" class="filters__select" name="neighborhoods" onchange="updateRestaurants()">
+          <select aria-label="Select Neighborhoods" id="neighborhoods-select" class="filters__select" name="neighborhoods" onchange="updateRestaurants()">
             <option value="all">All Neighborhoods</option>
           </select>
-          <select id="cuisines-select" class="filters__select" name="cuisines" onchange="updateRestaurants()">
+          <select aria-label="Select Cuisine" id="cuisines-select" class="filters__select" name="cuisines" onchange="updateRestaurants()">
             <option value="all">All Cuisines</option>
           </select>
       </div>

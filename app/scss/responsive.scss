@@ -24,7 +24,10 @@ html {
 //TBD
 
 /* ====================== 2nd page - Restaurant Details ====================== */
-
+.restaurant__heading {
+  font-size: $font-size-l;
+  letter-spacing: 1px;
+}
 .restaurant__cover {
   order: 1;
   width: 500px;
@@ -61,6 +64,10 @@ html {
     display: inline-block;
     margin: .8rem 4rem 2rem;
     width: calc((100% - 18rem)/2 );
+  }
+  .restaurant__heading {
+    font-size: $font-size-xl;
+      letter-spacing: 3px;
   }
 }
 
