@@ -1,6 +1,8 @@
 # Restaurant Reviews App
----
+
 #### _Three Stage Course Material Project - Restaurant Reviews_
+
+---
 
 ## Project Description
 
@@ -40,11 +42,11 @@ A service worker is used to cache the requests to all of the site’s assets, so
 
 ## Dependencies:
 
-[Leafletjs](https://leafletjs.com/);
-[Mapbox](https://www.mapbox.com/);
-[Gulp](https://gulpjs.com/);
-[Gulp-Sass](https://www.npmjs.com/package/gulp-sass);
-[Browser-Sync](https://browsersync.io/);
+* [Leafletjs](https://leafletjs.com/);
+* [Mapbox](https://www.mapbox.com/);
+* [Gulp](https://gulpjs.com/);
+* [Gulp-Sass](https://www.npmjs.com/package/gulp-sass);
+* [Browser-Sync](https://browsersync.io/);
 
 
 
