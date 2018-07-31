@@ -2,8 +2,6 @@
 
 #### _Three Stage Course Material Project - Restaurant Reviews_
 
----
-
 ## Project Description
 
 This Restaurant Reviews app is a project made for the completion of the [Udacity's Front-End Web Developer Nanodegree](https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001?v=fe1).
@@ -22,7 +20,7 @@ Convert a static webpage with no accessibility to a mobile-ready web application
 
 4. Go to the `mapbox_new_key` folder and open the file `config.js`. Replace `YOUR_API_KEY` with your key keeping it within single or double quotes.
 
-5. Move the `config.js` file into the app folder.
+5. Move the `config.js` file into the `app` folder.
 
 6. In the terminal, check your python version by inputing the command `python -V`. If you have Python 2.x, start the server with  `python -m SimpleHTTPServer 8000`  (or some other port, if port 8000 is already in use.) For Python 3.x, you can use `python3 -m http.server 8000`. If you don't have Python installed, navigate to Python's [website](https://www.python.org/) to download and install the software.
 
