@@ -1,0 +1,27 @@
+{
+  "name": "mws-restaurant-stage-1",
+  "version": "1.0.0",
+  "description": "Restaurant Review App",
+  "main": "app/index.html",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.24.6",
+    "gulp-install": "^1.1.0",
+    "gulp-sass": "^4.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sonjya00/mws-restaurant-stage-1.git"
+  },
+  "author": "Sonia Gorla",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sonjya00/mws-restaurant-stage-1/issues"
+  },
+  "homepage": "https://github.com/Sonjya00/mws-restaurant-stage-1#readme"
+}

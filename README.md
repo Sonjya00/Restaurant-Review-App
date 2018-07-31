@@ -1,32 +1,50 @@
-# Mobile Web Specialist Certification Course
+# Restaurant Reviews App
 ---
 #### _Three Stage Course Material Project - Restaurant Reviews_
 
-## Project Overview: Stage 1
+## Project Description
 
-For the **Restaurant Reviews** projects, you will incrementally convert a static webpage to a mobile-ready web application. In **Stage One**, you will take a static design that lacks accessibility and convert the design to be responsive on different sized displays and accessible for screen reader use. You will also add a service worker to begin the process of creating a seamless offline experience for your users.
+This Restaurant Reviews app is a project made for the completion of the [Udacity's Front-End Web Developer Nanodegree](https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001?v=fe1).
 
-### Specification
+## Instructions
 
-You have been provided the code for a restaurant reviews website. The code has a lot of issues. It’s barely usable on a desktop browser, much less a mobile device. It also doesn’t include any standard accessibility features, and it doesn’t work offline at all. Your job is to update the code to resolve these issues while still maintaining the included functionality. 
+Convert a static webpage with no accessibility to a mobile-ready web application responsive on different sized displays and accessible for screen reader use. Add a service worker to begin the process of creating a seamless offline experience for the users.
 
-### What do I do from here?
+## How to start
 
-1. In this folder, start up a simple HTTP server to serve up the site files on your local computer. Python has some simple tools to do this, and you don't even need to know Python. For most people, it's already installed on your computer. 
+1. Clone or download the repository;
 
-In a terminal, check the version of Python you have: `python -V`. If you have Python 2.x, spin up the server with `python -m SimpleHTTPServer 8000` (or some other port, if port 8000 is already in use.) For Python 3.x, you can use `python3 -m http.server 8000`. If you don't have Python installed, navigate to Python's [website](https://www.python.org/) to download and install the software.
+2.  In the terminal, cd into the root folder, and input the command `$ npm install` to install the dependencies.
 
-2. With your server running, visit the site: `http://localhost:8000`, and look around for a bit to see what the current experience looks like.
-3. Explore the provided code, and start making a plan to implement the required features in three areas: responsive design, accessibility and offline use.
-4. Write code to implement the updates to get this site on its way to being a mobile-ready website.
+3. Get a [Mapbox](https://www.mapbox.com/) key by registering on the website. Mapbox is free to use, and does not require any payment information. 
 
-## Leaflet.js and Mapbox:
+4. Go to the `mapbox_new_key` folder and open the file `config.js`. Replace `YOUR_API_KEY` with your key keeping it within single or double quotes.
 
-This repository uses [leafletjs](https://leafletjs.com/) with [Mapbox](https://www.mapbox.com/). You need to replace `<your MAPBOX API KEY HERE>` with a token from [Mapbox](https://www.mapbox.com/). Mapbox is free to use, and does not require any payment information. 
+5. Move the `config.js` file into the app folder.
 
-### Note about ES6
+6. In the terminal, check your python version by inputing the command `python -V`. If you have Python 2.x, start the server with  `python -m SimpleHTTPServer 8000`  (or some other port, if port 8000 is already in use.) For Python 3.x, you can use `python3 -m http.server 8000`. If you don't have Python installed, navigate to Python's [website](https://www.python.org/) to download and install the software.
 
-Most of the code in this project has been written to the ES6 JavaScript specification for compatibility with modern web browsers and future proofing JavaScript code. As much as possible, try to maintain use of ES6 in any additional JavaScript you write. 
+7. Visit http://localhost:8000 on your browser.
+
+8. Alternatively, run the command `$ gulp serve`. The app will open in the browser automatically.
+
+## Project overview
+
+The responsive design has been implemented by using CSS, Sass, media queries and Flexbox. The projects has also full accessibility with the implementation of the WAI-ARIA specifications.
+
+The app displays data related to a series of restaurants fetched from `data/restaurants.json`. `IndexedDB.js` has this function, while `main.js` and `restaurant_info.js` are responsible for utilizing the data to create content to be injected in the homepage and in each restaurants pages DOM.
+
+The app has two pages: the first one is the home page, which displays multiple restaurants; the second one contains detailed information about the restaurant selected from the home page. The homepage and each restaurant page have a Mapbox map where the exact location of the restaurants is shown. In the main page, it is possible to filter the restuarants by neighborhood and cuisine type, and to select one restaurants among the results to see more detailed information about it. Each restaurant page contains the name, the picture, the hours, the address, and the reviews of the restaurant with the average rating.
+
+A service worker is used to cache the requests to all of the site’s assets, so that any page that has been visited by a user will be accessible when the user is offline.
+
+## Dependencies:
+
+[Leafletjs](https://leafletjs.com/);
+[Mapbox](https://www.mapbox.com/);
+[Gulp](https://gulpjs.com/);
+[Gulp-Sass](https://www.npmjs.com/package/gulp-sass);
+[Browser-Sync](https://browsersync.io/);
 
 
 
