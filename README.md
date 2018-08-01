@@ -16,7 +16,7 @@ Convert a static webpage with no accessibility to a mobile-ready web application
 
 2.  In the terminal, cd into the root folder, and input the command `$ npm install` to install the dependencies.
 
-3. Get a [Mapbox](https://www.mapbox.com/) key by registering on the website. Mapbox is free to use, and does not require any payment information. 
+3. Get a [Mapbox](https://www.mapbox.com/) key by registering on the website. Mapbox is free to use, and does not require any payment information.
 
 4. Go to the `mapbox_new_key` folder and open the file `config.js`. Replace `YOUR_API_KEY` with your key keeping it within single or double quotes.
 
@@ -45,6 +45,4 @@ A service worker is used to cache the requests to all of the site’s assets, so
 * [Gulp](https://gulpjs.com/);
 * [Gulp-Sass](https://www.npmjs.com/package/gulp-sass);
 * [Browser-Sync](https://browsersync.io/);
-
-
-
+* [Google Fonts](https://fonts.google.com/)

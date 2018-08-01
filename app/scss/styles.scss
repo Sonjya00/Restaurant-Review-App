@@ -4,8 +4,9 @@
 /* ====================== Variables ====================== */
 
 // Theme Colors
-$color-orange-1: #ff6100;
 $color-red-1: #db0045;
+$color-orange-1: #ff6100;
+$color-orange-2: #ff9c00;
 $color-blue-1: #0275d8;
 $color-blue-2: #3390D6;
 $color-blue-3: #9CDCED;
@@ -18,13 +19,12 @@ $color-p-02: #eee;
 $color-p-03: #ddd;
 $color-p-04: #ccc;
 $color-p-05: #aaa;
-// $color-p-06: #666;
-// $color-p-07: #444;
-$color-p-08: #333;
-$color-p-09: #252831;
+$color-p-08: #444;
+$color-p-06: #333;
+$color-p-07: #252831;
 $color-black: #000;
 
-$main-font: Arial, Helvetica, sans-serif;
+$main-font: 'Raleway', sans-serif;
 
 $font-size-xs: 1.4rem;
 $font-size-s: 1.6rem;
@@ -42,8 +42,25 @@ $nav-height-2: 6rem;
 	border: 1px solid $color-p-05;
 }
 
+@mixin border-radius-top-label {
+	border-radius: 20px 0 0 0;
+}
+
 @mixin box-shadow-default {
 	box-shadow: 2px 2px 1rem rgba($color-black, .2);
+}
+
+@mixin color-gradient-redorange {
+	background: linear-gradient(to left, $color-red-1, $color-orange-1, $color-red-1);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+@mixin colors-top-label {
+	background-image: linear-gradient(to bottom, $color-p-08, $color-p-07);
+	// background-color: $color-p-07;
+	color: $color-p-03;
+	border-top: none;
 }
 
 @mixin font-style-link($color-default, $color-hf) {
@@ -53,21 +70,6 @@ $nav-height-2: 6rem;
 	&:focus {
 		color: $color-hf;
 	}
-}
-
-@mixin color-gradient-redorange {
-	background: linear-gradient(to left, $color-red-1, $color-orange-1, $color-red-1);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-}
-
-@mixin border-radius-top-label {
-	border-radius: 20px 0 0 0;
-}
-
-@mixin colors-top-label {
-	background-color: $color-p-08;
-	color: $color-p-03;
 }
 
 /* ====================== General ====================== */
@@ -82,7 +84,7 @@ $nav-height-2: 6rem;
 }
 body {
 	background-color: $color-gray-1;
-	color: $color-p-08;
+	color: $color-p-06;
 	font-family: $main-font;
 	font-size: $font-size-xs;
 	line-height: 2.5;
@@ -90,20 +92,12 @@ body {
 	position: relative;
 }
 
-// article, aside, canvas, details, figcaption,
-// figure, footer, header, hgroup, menu, nav, section {
-// 	display: block;
-// }
-
 /* ====================== Navigation ====================== */
 
 .header {
-	// :not(.header-secondary, breadcrumb) {
-	// 	height: $nav-height;
-	// }
 
 	&__nav {
-		background-color: $color-p-09;
+		background-color: $color-p-07;
 		height: $nav-height;
 		text-align: center;
 	  width: 100%;
@@ -116,8 +110,6 @@ body {
 
 .header-secondary {
   width: 100%;
-	// position: fixed;
-	// top: 0;
 }
 
 .breadcrumb {
@@ -174,6 +166,7 @@ body {
 	  color: $color-white;
 	  font-size: $font-size-m;
 	  font-weight: 400;
+		letter-spacing: .3rem;
 	  line-height: 1;
 	  margin: 0 2rem;
 		padding-top: 1.2rem;
@@ -188,7 +181,6 @@ body {
 	  height: 3.5rem;
 	  letter-spacing: 0;
 	  padding: 0 1rem;
-	  // width: calc((100% - 18rem)/2 );
 
 		&:focus {
 			border: 1px solid $color-orange-1;
@@ -248,7 +240,8 @@ body {
 			@include color-gradient-redorange;
 			display: inline-block;
 			font-size: $font-size-m;
-			font-weight: 520;
+			font-weight: 650;
+			//leave this height for the titles on two lines
 			height: 4.6rem;
 			letter-spacing: .8px;
 			line-height: 1.3;
@@ -258,7 +251,7 @@ body {
 		}
 		&__neighborhood {
 			color: $color-blue-1;
-			font-weight: 600;
+			font-weight: 700;
 		}
 		&__neighborhood, &__address {
 			font-size: $font-size-xs;
@@ -268,12 +261,13 @@ body {
 		&__more-btn,
 		&__more-btn:focus {
 			//background-color: lighten($color-orange-1, 10%);
-			background-image: linear-gradient(to bottom, $color-orange-1, $color-red-1);
-			border: 1px solid $color-p-03;
+			background-image: linear-gradient(to bottom, darken($color-orange-2, 2%), $color-orange-1);
+			border: 1px solid $color-p-02;
 			border-radius: .5rem;
 			@include box-shadow-default;
 			display: inline-block;
 			font-size: $font-size-xs;
+			font-weight: 700;
 			letter-spacing: .2rem;
 			margin: 1.5rem 0 0;
 			padding: .5rem 1.5rem;
@@ -296,7 +290,6 @@ body {
 
 .restaurant__heading {
 	@include color-gradient-redorange;
-	font-size: $font-size-xl;
 	font-weight: 200;
 	letter-spacing: 3px;
 	line-height: 1.1;
@@ -310,8 +303,17 @@ body {
 	flex-wrap: wrap;
 	height: 100%;
 	width: 100%;
-	//margin-top: 8rem;
-	//margin-top: calc(#{$nav-height} + #{$nav-height-2});
+}
+
+.restaurant, .reviews, {
+  border-bottom: 1px solid $color-p-04;
+  border-top: 1px solid $color-p-04;
+}
+
+.restaurant__cover {
+	margin: 2rem auto;
+	position: relative;
+
 	&__average-rating {
 		@include border-radius-top-label;
 		@include colors-top-label;
@@ -325,16 +327,6 @@ body {
 		transform:translateX(50%);
 		width: 80%;
 	}
-}
-
-.restaurant, .reviews, {
-  border-bottom: 1px solid $color-p-04;
-  border-top: 1px solid $color-p-04;
-}
-
-.restaurant__cover {
-	margin: 2rem auto;
-	position: relative;
 	&__img {
 		display: block;
 		@include box-shadow-default;
@@ -371,9 +363,10 @@ body {
 	&__hours {
 		background-color: $color-p-03;
 		@include border-radius-top-label;
-		color: $color-p-09;
+		color: $color-p-07;
 		margin: 4rem 0;
 		width: 100%;
+
 		th {
 			@include border-radius-top-label;
 			@include colors-top-label;
@@ -385,7 +378,6 @@ body {
 		td {
 			border-bottom: 1px solid $color-p-05;
 			font-size: $font-size-xs;
-			//border: 1px solid $color-p-04;
 		}
 		&--day{
 			background-color: $color-p-01;
@@ -393,13 +385,6 @@ body {
 			font-weight: bold;
 		}
 	}
-	// &__heading {
-	// 	color: $color-orange-1;
-	// 	font-size: $font-size-xl;
-	// 	font-weight: 300;
-	// 	letter-spacing: -1px;
-	// 	padding-top: 1rem;
-	// }
 }
 
 .map-restaurant__container {
@@ -422,8 +407,9 @@ body {
 	&__heading {
 	  @include color-gradient-redorange;
 	  font-weight: 300;
-		padding-bottom: .5rem;
+		margin-bottom: 2rem;
 		text-align: center;
+		text-transform: uppercase;
 	}
 	&__list {
 		margin: 0;
@@ -435,39 +421,38 @@ body {
 			@include box-shadow-default;
 			display: block;
 			list-style-type: none;
-			margin: 0 0 3rem;
+			margin: 0 auto 6rem;
 			overflow: hidden;
-			//padding: 0 2rem 2rem;
 			position: relative;
-			width: 100%;
 
 			&:last-of-type {
-				margin-bottom: 10rem;
+				margin-bottom: 12rem;
 			}
 			&-upperBar {
 				@include colors-top-label;
-				height: 4.5rem;
+				height: 4rem;
 				width: 100%;
 			}
 			&-user, &-date {
 				display: inline-block;
 			}
 			&-user {
+				margin-left: 2.8rem;
 				padding-right: 4rem;
 				color: $color-blue-3;
 				font-weight: bold;
 				font-size: $font-size-s;
-				padding-left: 2rem;
 			}
 			&-rating {
-				background: linear-gradient(to bottom left, $color-orange-1, $color-red-1);
+				background: linear-gradient(to bottom left, $color-orange-2, $color-red-1);
 				border-radius: 3px;
+				display: inline-block;
 				color: $color-white;
 				font-weight: bold;
 				text-transform: uppercase;
 				font-size: $font-size-s;
-				margin: .5rem;
-				padding: .5rem 1rem;
+				margin: 1.5rem 2.8rem;
+				padding: 0 1rem;
 			}
 			&-date {
 				font-style: italic;
@@ -476,7 +461,7 @@ body {
 			}
 			&-comments {
 				font-size: $font-size-xs;
-				margin: 2.8rem;
+				margin: 1rem 3rem;
 				text-align: justify;
 			}
 		}
@@ -486,7 +471,7 @@ body {
 /* ====================== Footer ====================== */
 
 .footer {
-  background-color: $color-p-08;
+  background-color: $color-p-06;
   color: $color-p-03;
   font-size: $font-size-xs;
   letter-spacing: .1rem;

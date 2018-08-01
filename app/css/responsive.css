@@ -10,7 +10,7 @@
 body {
   background-color: #a2b1b2;
   color: #333;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Raleway", sans-serif;
   font-size: 1.4rem;
   line-height: 2.5;
   margin: 0;
@@ -78,6 +78,7 @@ body {
     color: #fff;
     font-size: 1.8rem;
     font-weight: 400;
+    letter-spacing: .3rem;
     line-height: 1;
     margin: 0 2rem;
     padding-top: 1.2rem;
@@ -139,7 +140,7 @@ body {
     -webkit-text-fill-color: transparent;
     display: inline-block;
     font-size: 1.8rem;
-    font-weight: 520;
+    font-weight: 650;
     height: 4.6rem;
     letter-spacing: .8px;
     line-height: 1.3;
@@ -148,18 +149,19 @@ body {
     width: 90%; }
   .restaurant-box__neighborhood {
     color: #0275d8;
-    font-weight: 600; }
+    font-weight: 700; }
   .restaurant-box__neighborhood, .restaurant-box__address {
     font-size: 1.4rem;
     line-height: 2.4rem;
     margin: 0; }
   .restaurant-box__more-btn, .restaurant-box__more-btn:focus {
-    background-image: linear-gradient(to bottom, #ff6100, #db0045);
-    border: 1px solid #ddd;
+    background-image: linear-gradient(to bottom, #f59600, #ff6100);
+    border: 1px solid #eee;
     border-radius: .5rem;
     box-shadow: 2px 2px 1rem rgba(0, 0, 0, 0.2);
     display: inline-block;
     font-size: 1.4rem;
+    font-weight: 700;
     letter-spacing: .2rem;
     margin: 1.5rem 0 0;
     padding: .5rem 1.5rem;
@@ -181,7 +183,6 @@ body {
   background: linear-gradient(to left, #db0045, #ff6100, #db0045);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 2.8rem;
   font-weight: 200;
   letter-spacing: 3px;
   line-height: 1.1;
@@ -194,10 +195,19 @@ body {
   flex-wrap: wrap;
   height: 100%;
   width: 100%; }
-  .restaurant__average-rating {
+
+.restaurant, .reviews {
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #ccc; }
+
+.restaurant__cover {
+  margin: 2rem auto;
+  position: relative; }
+  .restaurant__cover__average-rating {
     border-radius: 20px 0 0 0;
-    background-color: #333;
+    background-image: linear-gradient(to bottom, #444, #252831);
     color: #ddd;
+    border-top: none;
     display: inline-block;
     top: 0;
     font-size: 1.6rem;
@@ -207,14 +217,6 @@ body {
     text-align: right;
     transform: translateX(50%);
     width: 80%; }
-
-.restaurant, .reviews {
-  border-bottom: 1px solid #ccc;
-  border-top: 1px solid #ccc; }
-
-.restaurant__cover {
-  margin: 2rem auto;
-  position: relative; }
   .restaurant__cover__img {
     display: block;
     box-shadow: 2px 2px 1rem rgba(0, 0, 0, 0.2);
@@ -223,8 +225,9 @@ body {
     max-width: 80%;
     height: auto; }
   .restaurant__cover__cuisine {
-    background-color: #333;
+    background-image: linear-gradient(to bottom, #444, #252831);
     color: #ddd;
+    border-top: none;
     font-size: 1.8rem;
     font-weight: 300;
     letter-spacing: 1rem;
@@ -254,8 +257,9 @@ body {
     width: 100%; }
     .restaurant__overview__hours th {
       border-radius: 20px 0 0 0;
-      background-color: #333;
+      background-image: linear-gradient(to bottom, #444, #252831);
       color: #ddd;
+      border-top: none;
       font-weight: 300;
       font-size: 1.8rem;
       letter-spacing: .5rem;
@@ -275,8 +279,9 @@ body {
   margin: 2rem 0; }
   .map-restaurant__container .restaurant__address {
     border-radius: 20px 0 0 0;
-    background-color: #333;
+    background-image: linear-gradient(to bottom, #444, #252831);
     color: #ddd;
+    border-top: none;
     text-align: center; }
 
 /* ====================== Reviews section ====================== */
@@ -287,8 +292,9 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 300;
-    padding-bottom: .5rem;
-    text-align: center; }
+    margin-bottom: 2rem;
+    text-align: center;
+    text-transform: uppercase; }
   .reviews__list {
     margin: 0;
     padding: 0; }
@@ -298,41 +304,42 @@ body {
       box-shadow: 2px 2px 1rem rgba(0, 0, 0, 0.2);
       display: block;
       list-style-type: none;
-      margin: 0 0 3rem;
+      margin: 0 auto 6rem;
       overflow: hidden;
-      position: relative;
-      width: 100%; }
+      position: relative; }
       .reviews__list__item:last-of-type {
-        margin-bottom: 10rem; }
+        margin-bottom: 12rem; }
       .reviews__list__item-upperBar {
-        background-color: #333;
+        background-image: linear-gradient(to bottom, #444, #252831);
         color: #ddd;
-        height: 4.5rem;
+        border-top: none;
+        height: 4rem;
         width: 100%; }
       .reviews__list__item-user, .reviews__list__item-date {
         display: inline-block; }
       .reviews__list__item-user {
+        margin-left: 2.8rem;
         padding-right: 4rem;
         color: #9CDCED;
         font-weight: bold;
-        font-size: 1.6rem;
-        padding-left: 2rem; }
+        font-size: 1.6rem; }
       .reviews__list__item-rating {
-        background: linear-gradient(to bottom left, #ff6100, #db0045);
+        background: linear-gradient(to bottom left, #ff9c00, #db0045);
         border-radius: 3px;
+        display: inline-block;
         color: #fff;
         font-weight: bold;
         text-transform: uppercase;
         font-size: 1.6rem;
-        margin: .5rem;
-        padding: .5rem 1rem; }
+        margin: 1.5rem 2.8rem;
+        padding: 0 1rem; }
       .reviews__list__item-date {
         font-style: italic;
         float: right;
         margin-right: 1rem; }
       .reviews__list__item-comments {
         font-size: 1.4rem;
-        margin: 2.8rem;
+        margin: 1rem 3rem;
         text-align: justify; }
 
 /* ====================== Footer ====================== */
@@ -390,12 +397,23 @@ html {
   order: 3;
   width: 100%; }
 
+.reviews__list__item {
+  width: 100%; }
+
+.reviews__heading {
+  font-size: 2.4rem; }
+
 /* ====================== First Breakpoint ====================== */
 @media screen and (min-width: 350px) {
   .header__link {
     font-size: 2.8rem;
     font-weight: 100;
-    letter-spacing: .1rem; } }
+    letter-spacing: .1rem; }
+  .restaurant__heading {
+    font-size: 2.8rem;
+    letter-spacing: 1px; }
+  .reviews__heading {
+    font-size: 2.8rem; } }
 
 /* ====================== Second Breakpoint ====================== */
 @media screen and (min-width: 480px) {
@@ -410,8 +428,10 @@ html {
     margin: .8rem 4rem 2rem;
     width: calc((100% - 18rem)/2); }
   .restaurant__heading {
-    font-size: 2.8rem;
-    letter-spacing: 3px; } }
+    font-size: 3.2rem;
+    letter-spacing: 3px; }
+  .reviews__heading {
+    font-size: 3.2rem; } }
 
 /* ====================== Third Breakpoint ====================== */
 @media screen and (min-width: 570px) {
@@ -430,7 +450,9 @@ html {
     order: 2;
     width: 40%;
     max-height: 32rem;
-    margin: 2rem auto; } }
+    margin: 2rem auto; }
+  .reviews__list__item {
+    width: 85%; } }
 
 /* ====================== Fifth breakpoint ====================== */
 @media screen and (min-width: 980px) {

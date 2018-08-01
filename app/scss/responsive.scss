@@ -40,6 +40,12 @@ html {
 	order: 3;
   width: 100%;
 }
+.reviews__list__item {
+  width: 100%;
+}
+.reviews__heading {
+  font-size: $font-size-l;
+}
 
 /* ====================== First Breakpoint ====================== */
 @media screen and (min-width: 350px) {
@@ -47,6 +53,13 @@ html {
     font-size: $font-size-xl;
     font-weight: 100;
     letter-spacing: .1rem;
+  }
+  .restaurant__heading {
+    font-size: $font-size-xl;
+    letter-spacing: 1px;
+  }
+  .reviews__heading {
+    font-size: $font-size-xl;
   }
 }
 
@@ -66,8 +79,11 @@ html {
     width: calc((100% - 18rem)/2 );
   }
   .restaurant__heading {
-    font-size: $font-size-xl;
+    font-size: $font-size-xxl;
     letter-spacing: 3px;
+  }
+  .reviews__heading {
+    font-size: $font-size-xxl;
   }
 }
 
@@ -95,8 +111,9 @@ html {
     margin: 2rem auto;
   }
   .map-restaurant {
-
-
+  }
+  .reviews__list__item {
+    width: 85%;
   }
 }
 

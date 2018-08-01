@@ -91,11 +91,11 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
     count += restaurant.reviews[i].rating;
     average = (count/restaurant.reviews.length).toFixed(2);;
   }
-  averageRating.innerHTML = `<p><span class="restaurant-overview__strong-text">Rating: </span>${average} (${restaurant.reviews.length} reviews)</p>`;
+  averageRating.innerHTML = `<p><span class="restaurant__overview__strong-text">Rating: </span>${average} (${restaurant.reviews.length} reviews)</p>`;
 
   const address = document.getElementById('restaurant-address');
   address.innerHTML = `<p>${restaurant.address}</p>`;
-  // address.innerHTML = `<span class="restaurant-overview__strong-text"> Address: </span>${restaurant.address}`;
+  // address.innerHTML = `<span class="restaurant__overview__strong-text"> Address: </span>${restaurant.address}`;
 
   const image = document.getElementById('restaurant-img');
   // Add average rating and total reviews to the info on top
@@ -122,7 +122,7 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
     const row = document.createElement('tr');
 
     const day = document.createElement('td');
-    day.className = 'restaurant-overview__hours--day'
+    day.className = 'restaurant__overview__hours--day'
     day.innerHTML = key;
     row.appendChild(day);
 
