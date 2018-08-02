@@ -138,6 +138,20 @@ body {
 	}
 }
 
+.skip-link {
+	position: absolute;
+	top: -8rem;
+	left: 0;
+	background-color: $color-red-1;
+	color: $color-white;
+	padding: .8rem;
+	z-index: 100;
+}
+
+.skip-link:focus {
+	top: 0;
+}
+
 /* ====================== Map ====================== */
 
 .map-global {

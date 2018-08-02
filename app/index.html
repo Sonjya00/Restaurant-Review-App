@@ -24,13 +24,14 @@
     </nav>
   </header>
 
-  <main id="maincontent" class="main__container">
+  <a href="#restaurantSearch" class="skip-link">Skip to Restaurant Search</a>
 
-    <section id="map-container">
-      <div id="map" class="map-global"></div>
+  <main id="maincontent" class="main__container" role="main">
+    <section id="map-container" aria-label="Mapbox showing filtered restaurants location">
+      <div id="map" class="map-global" role="application"></div>
     </section>
 
-    <section>
+    <section id="restaurantSearch">
       <div class="filters">
         <h2 class="filters__heading">Filter Results</h2>
           <select aria-label="Select Neighborhoods" id="neighborhoods-select" class="filters__select" name="neighborhoods" onchange="updateRestaurants()">

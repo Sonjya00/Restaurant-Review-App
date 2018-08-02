@@ -19,19 +19,19 @@
 <body>
 
   <header class="header header-secondary">
-    <nav class="header__nav">
+    <nav class="header__nav" role="navigation">
       <h1 class="header__main-heading"><a class="header__link" href="/">Restaurant Reviews</a></h1>
     </nav>
-    <ol aria-label="Breadcrumb" id="breadcrumb" class="breadcrumb" >
+    <ol id="breadcrumb" class="breadcrumb" aria-label="Breadcrumb">
       <li class="breadcrumb__li"><a href="/">Home</a></li>
     </ol>
   </header>
 
-  <main id="maincontent" class="main__container">
+  <main id="maincontent" class="main__container" role="main">
     <h2 id="restaurant-name" class="restaurant__heading"></h2>
 
     <!-- Beginning restaurant -->
-    <section id="restaurant-container" class="restaurant">
+    <section id="restaurant-container" class="restaurant" aria-label="Restaurant's information">
 
       <div class="restaurant__cover">
         <p id="averageRating" class="restaurant__cover__average-rating"></p>
@@ -47,16 +47,17 @@
         </table>
       </div>
 
-      <div id="map-container" class="map-restaurant__container">
+      <div id="map-container" class="map-restaurant__container" aria-label="Address and Mapbox showing current restaurant's location">
         <p id="restaurant-address" class="restaurant__address"></p>
-        <div id="map" class="map-restaurant"></div>
+        <div id="map" class="map-restaurant" role="application">
+        </div>
       </div>
 
     </section>
     <!-- end restaurant -->
 
     <!-- Beginning reviews -->
-    <section id="reviews-container" class="reviews">
+    <section id="reviews-container" class="reviews" aria-label="Restaurant's reviews">
       <ul id="reviews-list" class="reviews__list"></ul>
     </section>
     <!-- End reviews -->

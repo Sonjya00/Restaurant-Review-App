@@ -194,12 +194,13 @@ createRestaurantHTML = (restaurant) => {
 	li.append(address);
 
 	const more = document.createElement('a');
+	more.id = `button${restaurant.id}`;
 	more.className = 'restaurant-box__more-btn';
 	more.href = DBHelper.urlForRestaurant(restaurant);
 
 	// Add support for custom button
 	more.setAttribute('role', 'button');
-	more.setAttribute('aria-labelledby', name.id);
+	more.setAttribute('aria-labelledby', `${name.id} ${more.id}`);
 	more.innerHTML = 'View Details';
 	more.addEventListener('keypress', function() {
 		if (event.keyCode === 32) {

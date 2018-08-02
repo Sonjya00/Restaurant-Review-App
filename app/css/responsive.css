@@ -56,6 +56,18 @@ body {
     content: "/\00a0";
     padding: .8rem; }
 
+.skip-link {
+  position: absolute;
+  top: -8rem;
+  left: 0;
+  background-color: #db0045;
+  color: #fff;
+  padding: .8rem;
+  z-index: 100; }
+
+.skip-link:focus {
+  top: 0; }
+
 /* ====================== Map ====================== */
 .map-global {
   background-color: #ccc;
