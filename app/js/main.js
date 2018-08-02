@@ -168,7 +168,8 @@ createRestaurantHTML = (restaurant) => {
 	li.className = 'restaurant-box'
 
 	const name = document.createElement('h3');
-	name.className = 'restaurant-box__name'
+	name.className = 'restaurant-box__name';
+	name.id = `heading${restaurant.id}`
 	name.innerHTML = restaurant.name;
 
 	const image = document.createElement('img');
@@ -193,10 +194,20 @@ createRestaurantHTML = (restaurant) => {
 	li.append(address);
 
 	const more = document.createElement('a');
-	more.className = 'restaurant-box__more-btn'
-	more.setAttribute('role', 'button');
-	more.innerHTML = 'View Details';
+	more.className = 'restaurant-box__more-btn';
 	more.href = DBHelper.urlForRestaurant(restaurant);
+
+	// Add support for custom button
+	more.setAttribute('role', 'button');
+	more.setAttribute('aria-labelledby', name.id);
+	more.innerHTML = 'View Details';
+	more.addEventListener('keypress', function() {
+		if (event.keyCode === 32) {
+			event.preventDefault();
+			window.location.href = more.href;
+		}
+  });
+
 	li.append(more);
 
 	return li;

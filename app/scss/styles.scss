@@ -157,7 +157,7 @@ body {
 
 .filters {
 	align-items: center;
-  background: linear-gradient(to right, $color-blue-2, $color-blue-1, $color-blue-2);
+  background: linear-gradient(to right, darken($color-blue-2, 10%), darken($color-blue-1, 10%), darken($color-blue-2, 10%));
 
 	width: 100%;
 	@include border-default;
@@ -177,7 +177,7 @@ body {
 	&__select {
 	  background-color: $color-white;
 	  border: 1px solid $color-p-01;
-	  font-size: $font-size-xs;
+	  font-size: $font-size-s;
 	  height: 3.5rem;
 	  letter-spacing: 0;
 	  padding: 0 1rem;
@@ -216,8 +216,6 @@ body {
 		border-radius: .8rem;
 		@include box-shadow-default;
 		display: inline-block;
-	  margin: 1.2rem;
-		max-width: 26rem;
 	  min-height: 38rem;
 	  padding: 0 0 2.5rem;
 	  text-align: center;
@@ -254,7 +252,7 @@ body {
 			font-weight: 700;
 		}
 		&__neighborhood, &__address {
-			font-size: $font-size-xs;
+			font-size: $font-size-s;
 			line-height: 2.4rem;
 			margin: 0;
 		}
