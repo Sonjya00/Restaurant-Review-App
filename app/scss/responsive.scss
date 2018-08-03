@@ -14,11 +14,12 @@ html {
 }
 .filters {
   height: 12rem;
-}
-.filters__select {
-  display: block;
-  margin: .5rem auto;
-  width: 80%;
+
+  &__select {
+    display: block;
+    margin: .5rem auto;
+    width: 80%;
+  }
 }
 
 /* ====================== Restaurant Listing ====================== */
@@ -37,9 +38,10 @@ html {
 .restaurant__cover {
   order: 1;
   width: 100%;
+
   &__average-rating {
-    width: 100%;
     max-width: $image-cover-width;
+    width: 100%;
   }
   img {
     height: auto;
@@ -52,13 +54,13 @@ html {
     transform: translateX(-50%);
   }
   &__cuisine {
-    width: 100%;
     max-width: $image-cover-width;
+    width: 100%;
   }
 }
 .restaurant__info-title {
-	width: 100%;
 	order: 2;
+  width: 100%;
 }
 .restaurant__hours {
   margin: 0 2rem 3rem;
@@ -66,9 +68,9 @@ html {
 	width: 100%;
 }
 .map-restaurant {
+  height: 35rem;
   margin: 0 2rem 6rem;
 	order: 3;
-  height: 35rem;
   width: 100%;
   &__map {
     height: 100%;
@@ -85,13 +87,10 @@ html {
 @media screen and (min-width: 350px) {
   .header__link, .restaurant__heading-2, .restaurant__heading-3 {
     font-size: $font-size-xl;
+    letter-spacing: .1rem;
   }
   .header__link {
     font-weight: 100;
-    letter-spacing: .1rem;
-  }
-  .restaurant__heading-2 {
-    letter-spacing: 1px;
   }
 }
 
@@ -137,12 +136,12 @@ html {
 @media screen and (min-width: 600px) {
   .restaurant__cover {
     img {
-      width: 100%;
+      left: 0;
       max-height: 40rem;
       max-width: $image-cover-width;
       position: relative;
-      left: 0;
       transform: translateX(0);
+      width: 100%;
     }
   }
 }
@@ -154,26 +153,23 @@ html {
     width: calc((100% - 3rem)/3);
   }
   .restaurant__hours {
-      order: 3;
-      width: calc((100% - 8rem)/2);
-      max-width: 50rem;
-      height: 38rem;
-      margin: 2rem 2rem 0;
-      padding:0;
+    height: 38rem;
+    margin: 2rem 2rem 0;
+    max-width: 50rem;
+    order: 3;
+    padding:0;
+    width: calc((100% - 8rem)/2);
     }
   .map-restaurant {
-    order: 4;
-    width: calc((100% - 8rem)/2);
     height: calc(31.5rem - 3.6rem);
     margin: 2rem 2rem 0;
+    order: 4;
     padding:0;
+    width: calc((100% - 8rem)/2);
     &__map {
-      height: 30rem;
-      overflow:hidden;
       height: calc(31.5rem - 3.6rem);
     }
   }
-
   .reviews__list__item {
     width: 85%;
   }
@@ -202,7 +198,7 @@ html {
 /* ====================== Eighth breakpoint ====================== */
 @media screen and (min-width: 1060px) {
   .restaurant-box {
-    width: calc((100% - 10rem)/4);
     margin: 1rem;
+    width: calc((100% - 10rem)/4);
   }
 }

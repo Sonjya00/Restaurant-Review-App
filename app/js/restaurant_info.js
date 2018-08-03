@@ -100,6 +100,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   const image = document.getElementById('restaurant-img');
   // Add average rating and total reviews to the info on top
   image.setAttribute('alt', `Photo of ${restaurant.name}`);
+  // Add cropped image as cover image
   image.src = `img/cover_img/${restaurant.id}.jpg`;
   // image.src = DBHelper.imageUrlForRestaurant(restaurant);
 

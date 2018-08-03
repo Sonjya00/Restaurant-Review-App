@@ -56,26 +56,26 @@ body {
     padding: .8rem; }
 
 .skip-link {
+  background-color: #db0045;
+  color: #fff;
   position: absolute;
   top: -8rem;
   left: 0;
-  background-color: #db0045;
-  color: #fff;
   padding: .8rem;
   z-index: 100; }
-
-.skip-link:focus {
-  top: 0; }
+  .skip-link:focus {
+    top: 0; }
 
 /* ====================== Map ====================== */
-.map-global {
+.map-global, .map-restaurant {
   background-color: #ccc;
+  height: 100%; }
+
+.map-global {
   height: 40rem;
   width: 100%; }
 
 .map-restaurant {
-  background-color: #ccc;
-  height: 100%;
   position: static;
   width: 100%; }
 
@@ -83,8 +83,8 @@ body {
 .filters {
   align-items: center;
   background: linear-gradient(to right, #2475b2, #025aa5, #2475b2);
-  width: 100%;
-  border: 1px solid #aaa; }
+  border: 1px solid #aaa;
+  width: 100%; }
   .filters__heading {
     color: #fff;
     font-size: 1.8rem;
@@ -221,11 +221,11 @@ body {
   border-top: 1px solid #ccc; }
 
 .restaurant__cover {
+  border-bottom: 1px solid #ccc;
   margin: 0 2rem;
   padding: 0 0 2rem;
   position: relative;
-  overflow: hidden;
-  border-bottom: 1px solid #ccc; }
+  overflow: hidden; }
   .restaurant__cover__average-rating {
     border-radius: 20px 0 0 0;
     background-image: linear-gradient(to bottom, #444, #252831);
@@ -292,11 +292,11 @@ body {
     background-image: linear-gradient(to bottom, #444, #252831);
     color: #ddd;
     border-top: none;
-    text-align: center;
-    margin: 0; }
+    margin: 0;
+    text-align: center; }
   .map-restaurant__map {
-    max-height: none;
-    border: 1px solid #aaa; }
+    border: 1px solid #aaa;
+    max-height: none; }
 
 /* ====================== Reviews section ====================== */
 .reviews {
@@ -332,13 +332,13 @@ body {
       .reviews__list__item-rating {
         background: linear-gradient(to bottom left, #ff9c00, #db0045);
         border-radius: 3px;
-        display: inline-block;
         color: #fff;
-        font-weight: bold;
-        text-transform: uppercase;
+        display: inline-block;
         font-size: 1.6rem;
+        font-weight: bold;
         margin: 1.5rem 2.8rem;
-        padding: 0 1rem; }
+        padding: 0 1rem;
+        text-transform: uppercase; }
       .reviews__list__item-date {
         font-style: italic;
         float: right;
