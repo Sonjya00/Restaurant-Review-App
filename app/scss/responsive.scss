@@ -6,6 +6,7 @@ html {
   font-size: 62.5%;
 }
 
+/* ====================== Navigation ====================== */
 .header__link {
   font-size: $font-size-l;
   font-weight: 100;
@@ -27,70 +28,94 @@ html {
 }
 
 /* ====================== 2nd page - Restaurant Details ====================== */
-.restaurant__heading {
+.restaurant__heading-2 {
   font-size: $font-size-l;
   letter-spacing: 1px;
 }
 .restaurant__cover {
   order: 1;
-  width: 500px;
+  width: 100%;
+  &__average-rating {
+    width: 100%;
+    max-width: $image-cover-width;
+  }
+  img {
+    height: auto;
+    position: relative;
+    left: 50%;
+    margin: 3rem auto 0;
+    max-height: 36rem;
+    min-height: 30rem;
+    min-width: 60rem;
+    transform: translateX(-50%);
+  }
+  &__cuisine {
+    width: 100%;
+    max-width: $image-cover-width;
+  }
 }
-.restaurant__overview {
+.restaurant__info-title {
+	width: 100%;
 	order: 2;
+}
+.restaurant__hours {
+  margin: 0 1rem;
+  padding: 0 1rem 3rem;
+	order: 4;
 	width: 100%;
 }
 .map-restaurant__container {
+  margin: 0 1rem 3rem;
+  padding: 0 1rem 3rem;
 	order: 3;
+  height: 35rem;
   width: 100%;
 }
 .reviews__list__item {
   width: 100%;
 }
-.reviews__heading {
+.restaurant__heading-3 {
   font-size: $font-size-l;
 }
 
 /* ====================== First Breakpoint ====================== */
 @media screen and (min-width: 350px) {
-  .header__link {
+  .header__link, .restaurant__heading-2, .restaurant__heading-3 {
     font-size: $font-size-xl;
+  }
+  .header__link {
     font-weight: 100;
     letter-spacing: .1rem;
   }
-  .restaurant__heading {
-    font-size: $font-size-xl;
+  .restaurant__heading-2 {
     letter-spacing: 1px;
-  }
-  .reviews__heading {
-    font-size: $font-size-xl;
   }
 }
 
 /* ====================== Second Breakpoint ====================== */
 @media screen and (min-width: 480px) {
+  .header__link, .restaurant__heading-2, .restaurant__heading-3 {
+    font-size: $font-size-xl;
+  }
   .header__link {
-    font-size: $font-size-xxl;
     font-weight: 200;
     letter-spacing: .6rem;
   }
   .filters {
     height: 9rem;
-  }
-  .filters__select {
-    display: inline-block;
-    margin: .8rem 4rem 2rem;
-    width: calc((100% - 18rem)/2 );
+
+    &__select {
+      display: inline-block;
+      margin: .8rem 4rem 2rem;
+      width: calc((100% - 18rem)/2 );
+    }
   }
   .restaurant-box {
     max-width: 45%;
     margin: 2%;
   }
   .restaurant__heading {
-    font-size: $font-size-xxl;
     letter-spacing: 3px;
-  }
-  .reviews__heading {
-    font-size: $font-size-xxl;
   }
 }
 
@@ -105,41 +130,59 @@ html {
 }
 
 /* ====================== Fourth Breakpoint ====================== */
-@media screen and (min-width: 740px) {
-  .restaurant-box {
-    max-width: 30%;
-    margin: .5%;
+@media screen and (min-width: 600px) {
+  .restaurant__cover {
+    img {
+      width: 100%;
+      max-height: 40rem;
+      max-width: $image-cover-width;
+      position: relative;
+      left: 0;
+      transform: translateX(0);
+    }
   }
 }
 
 /* ====================== Fifth Breakpoint ====================== */
+@media screen and (min-width: 755px) {
+  .restaurant-box {
+    max-width: 30%;
+    margin: .5%;
+  }
+  .restaurant__hours {
+      order: 3;
+      width: calc((100% - 8rem)/2);
+      max-width: 50rem;
+      height: 38rem;
+      margin: 2rem 2rem 0;
+      padding:0;
+    }
+  .map-restaurant__container {
+    order: 4;
+    width: calc((100% - 8rem)/2);
+    height: calc(31.5rem - 3.6rem);
+    margin: 2rem 2rem 0;
+    padding:0;
+  }
+  .map-restaurant {
+    height: 30rem;
+    overflow:hidden;
+    height: calc(31.5rem - 3.6rem);
+  }
+}
+
+/* ====================== Sixth Breakpoint ====================== */
 @media screen and (min-width: 830px) {
   .restaurant-box {
     max-width: 25rem;
     margin: 1rem;
-  }
-  .restaurant__cover {
-    order: 1;
-    width: 50%;
-  }
-  .restaurant__overview {
-  		order: 3;
-  		width: 100%;
-    }
-  .map-restaurant__container {
-  	order: 2;
-    width: 40%;
-    max-height: 32rem;
-    margin: 2rem auto;
-  }
-  .map-restaurant {
   }
   .reviews__list__item {
     width: 85%;
   }
 }
 
-  /* ====================== Sixth breakpoint ====================== */
+  /* ====================== Seventh breakpoint ====================== */
 @media screen and (min-width: 980px) {
   html {
     font-size: 62.5%;
@@ -147,23 +190,12 @@ html {
   .restaurant-box {
     margin: 2rem;
   }
-  .restaurant__cover {
-    order: 1;
-    width: 50%;
-  }
-  .restaurant__overview {
-  		order: 2;
-  		width: 50%;
-    }
-  .map-restaurant__container {
-  	order: 3;
-    width: 100%;
-    max-height: 40rem;
-    margin: 6rem 0;
+  .restaurant {
+    padding: 0 2rem;
   }
 }
 
-/* ====================== Seventh breakpoint ====================== */
+/* ====================== Eighth breakpoint ====================== */
 @media screen and (min-width: 1060px) {
   .restaurant-box {
     max-width: 24rem;

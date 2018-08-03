@@ -36,19 +36,18 @@ body {
 .breadcrumb {
   background-color: #cccccc;
   font-size: 1.6rem;
-  height: 6rem;
+  height: 5rem;
   list-style: none;
   opacity: 1;
-  padding: 1rem 2rem 1rem;
+  padding: .5rem 2rem;
   width: 100%;
+  text-align: center;
   /* Add a slash symbol (/) before/behind each list item */ }
   .breadcrumb__li {
-    display: inline-block;
-    height: 1rem; }
+    display: inline-block; }
     .breadcrumb__li a {
       color: #014c8c;
-      text-decoration: none;
-      margin-left: .8rem; }
+      text-decoration: none; }
       .breadcrumb__li a:hover, .breadcrumb__li a:focus {
         color: #ff6100; }
   .breadcrumb__li + li:before {
@@ -189,15 +188,29 @@ body {
       transform: translateY(0.1rem); }
 
 /* ====================== 2nd page - Restaurant Details ====================== */
-.restaurant__heading {
+.restaurant__heading-2, .restaurant__heading-3 {
   background: linear-gradient(to left, #db0045, #ff6100, #db0045);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  line-height: 1.1;
+  text-align: center;
+  text-transform: uppercase; }
+
+.restaurant__heading-2 {
   font-weight: 200;
   letter-spacing: 3px;
-  line-height: 1.1;
-  margin: 2rem 0;
-  text-align: center;
+  margin: 2rem 0; }
+
+.restaurant__heading-3 {
+  font-weight: 300;
+  margin: 1rem 0;
+  padding: 1rem 0; }
+
+.restaurant__strong-text {
+  background: linear-gradient(to left, #db0045, #ff6100, #db0045);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
   text-transform: uppercase; }
 
 .restaurant {
@@ -211,8 +224,11 @@ body {
   border-top: 1px solid #ccc; }
 
 .restaurant__cover {
-  margin: 2rem auto;
-  position: relative; }
+  margin: 0 2rem;
+  padding: 0 0 2rem;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid #ccc; }
   .restaurant__cover__average-rating {
     border-radius: 20px 0 0 0;
     background-image: linear-gradient(to bottom, #444, #252831);
@@ -226,14 +242,10 @@ body {
     right: 50%;
     text-align: right;
     transform: translateX(50%);
-    width: 80%; }
+    z-index: 100; }
   .restaurant__cover__img {
     display: block;
-    box-shadow: 2px 2px 1rem rgba(0, 0, 0, 0.2);
-    max-height: 36rem;
-    margin: 3rem auto 0;
-    max-width: 80%;
-    height: auto; }
+    box-shadow: 2px 2px 1rem rgba(0, 0, 0, 0.2); }
   .restaurant__cover__cuisine {
     background-image: linear-gradient(to bottom, #444, #252831);
     color: #ddd;
@@ -245,27 +257,19 @@ body {
     padding: .2rem 0;
     text-align: center;
     text-transform: uppercase;
-    width: 80%; }
+    width: 100%;
+    z-index: 100; }
 
-.restaurant__overview {
+.restaurant__hours {
   display: block;
   font-size: 1.4rem;
-  padding: 2rem 4rem 3rem;
-  margin: 0;
   text-align: center; }
-  .restaurant__overview__strong-text {
-    background: linear-gradient(to left, #db0045, #ff6100, #db0045);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: bold;
-    text-transform: uppercase; }
-  .restaurant__overview__hours {
+  .restaurant__hours__table {
     background-color: #ddd;
     border-radius: 20px 0 0 0;
     color: #252831;
-    margin: 4rem 0;
     width: 100%; }
-    .restaurant__overview__hours th {
+    .restaurant__hours__table th {
       border-radius: 20px 0 0 0;
       background-image: linear-gradient(to bottom, #444, #252831);
       color: #ddd;
@@ -274,37 +278,31 @@ body {
       font-size: 1.8rem;
       letter-spacing: .5rem;
       text-transform: uppercase; }
-    .restaurant__overview__hours td {
+    .restaurant__hours__table td {
       border-bottom: 1px solid #aaa;
       font-size: 1.4rem; }
-    .restaurant__overview__hours--day {
+    .restaurant__hours__table--day {
       background-color: #f3f3f3;
       color: #20679d;
       font-weight: bold; }
 
 .map-restaurant__container {
-  border: 1px solid #aaa;
-  border-radius: 20px 0 0 0;
-  height: 40rem;
-  margin: 2rem 0; }
+  display: block;
+  border-radius: 20px 0 0 0; }
   .map-restaurant__container .restaurant__address {
+    border: 1px solid #aaa;
     border-radius: 20px 0 0 0;
     background-image: linear-gradient(to bottom, #444, #252831);
     color: #ddd;
     border-top: none;
-    text-align: center; }
+    text-align: center;
+    margin: 0; }
+  .map-restaurant__container .map-restaurant {
+    border: 1px solid #aaa; }
 
 /* ====================== Reviews section ====================== */
 .reviews {
-  padding: 3rem 4rem 3rem; }
-  .reviews__heading {
-    background: linear-gradient(to left, #db0045, #ff6100, #db0045);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 300;
-    margin-bottom: 2rem;
-    text-align: center;
-    text-transform: uppercase; }
+  padding: 1rem 4rem 3rem; }
   .reviews__list {
     margin: 0;
     padding: 0; }

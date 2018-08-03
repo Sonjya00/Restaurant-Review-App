@@ -34,8 +34,10 @@ $font-size-xl: 2.8rem;
 $font-size-xxl: 3.2rem;
 
 $nav-height: 8rem;
-$nav-height-2: 6rem;
+$nav-height-2: 5rem;
 
+$image-cover-width: 80rem;
+$image-cover-height: 40rem;
 /* ====================== Mixins ====================== */
 
 @mixin border-default {
@@ -118,16 +120,16 @@ body {
 	height: $nav-height-2;
 	list-style: none;
 	opacity: 1;
-	padding: 1rem 2rem 1rem;
+	padding: .5rem 2rem;
 	width: 100%;
+	text-align: center;
   // width: calc(50% - 8rem);
 
 	&__li {
     display: inline-block;
-		height: 1rem;
+		//height: 1rem;
 		a {
 			@include font-style-link(darken($color-blue-1, 15%), $color-orange-1);
-			margin-left: .8rem;
 		}
 	}
 	/* Add a slash symbol (/) before/behind each list item */
@@ -300,31 +302,48 @@ body {
 
 /* ====================== 2nd page - Restaurant Details ====================== */
 
-.restaurant__heading {
+// FONTS
+.restaurant__heading-2, .restaurant__heading-3 {
 	@include color-gradient-redorange;
-	font-weight: 200;
-	letter-spacing: 3px;
 	line-height: 1.1;
-	margin: 2rem 0;
 	text-align: center;
 	text-transform: uppercase;
 }
+.restaurant__heading-2 {
+	font-weight: 200;
+	letter-spacing: 3px;
+	margin: 2rem 0;
+}
+.restaurant__heading-3 {
+	font-weight: 300;
+	margin: 1rem 0;
+	padding: 1rem 0;
+}
+.restaurant__strong-text {
+	@include color-gradient-redorange;
+	font-weight: bold;
+	text-transform: uppercase;
+}
 
+// GENERAL
 .restaurant {
 	display: flex;
 	flex-wrap: wrap;
 	height: 100%;
 	width: 100%;
 }
-
 .restaurant, .reviews, {
   border-bottom: 1px solid $color-p-04;
   border-top: 1px solid $color-p-04;
 }
 
+// IMG AREA
 .restaurant__cover {
-	margin: 2rem auto;
+	margin: 0 2rem;
+	padding: 0 0 2rem;
 	position: relative;
+	overflow: hidden;
+	border-bottom: 1px solid $color-p-04;
 
 	&__average-rating {
 		@include border-radius-top-label;
@@ -337,15 +356,11 @@ body {
 		right: 50%;
 		text-align: right;
 		transform:translateX(50%);
-		width: 80%;
+		z-index: 100;
 	}
 	&__img {
 		display: block;
 		@include box-shadow-default;
-		max-height: 36rem;
-		margin: 3rem auto 0;
-		max-width: 80%;
-		height: auto;
 	}
 	&__cuisine {
 		@include colors-top-label;
@@ -356,27 +371,22 @@ body {
 		padding: .2rem 0;
 		text-align: center;
 		text-transform: uppercase;
-		width: 80%;
+		width: 100%;
+		z-index: 100;
 	}
 }
 
-.restaurant__overview {
+// HOURS TABLE
+.restaurant__hours {
 		display: block;
 		font-size: $font-size-xs;
-		padding: 2rem 4rem 3rem;
-		margin: 0;
 		text-align: center;
 
-	&__strong-text {
-		@include color-gradient-redorange;
-		font-weight: bold;
-		text-transform: uppercase;
-	}
-	&__hours {
+	&__table {
 		background-color: $color-p-03;
 		@include border-radius-top-label;
 		color: $color-p-07;
-		margin: 4rem 0;
+		//margin: 0;
 		width: 100%;
 
 		th {
@@ -399,30 +409,37 @@ body {
 	}
 }
 
+// MAP AREA
 .map-restaurant__container {
-	@include border-default;
+	//border: none;
+	display: block;
 	@include border-radius-top-label;
-	height: 40rem;
-	margin: 2rem 0;
+	//height: 40rem;
+	//margin: 1rem;
 
 	.restaurant__address {
+		@include border-default;
 		@include border-radius-top-label;
 		@include colors-top-label;
 		text-align: center;
+		margin: 0;
+	}
+	.map-restaurant {
+		@include border-default;
 	}
 }
 
 /* ====================== Reviews section ====================== */
 
 .reviews {
-	padding: 3rem 4rem 3rem;
-	&__heading {
-	  @include color-gradient-redorange;
-	  font-weight: 300;
-		margin-bottom: 2rem;
-		text-align: center;
-		text-transform: uppercase;
-	}
+	padding: 1rem 4rem 3rem;
+	// &__heading {
+	//   @include color-gradient-redorange;
+	//   font-weight: 300;
+	// 	margin-bottom: 2rem;
+	// 	text-align: center;
+	// 	text-transform: uppercase;
+	// }
 	&__list {
 		margin: 0;
 		padding: 0;

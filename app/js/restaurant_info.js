@@ -91,16 +91,17 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
     count += restaurant.reviews[i].rating;
     average = (count/restaurant.reviews.length).toFixed(2);;
   }
-  averageRating.innerHTML = `<p><span class="restaurant__overview__strong-text">Rating: </span>${average} (${restaurant.reviews.length} reviews)</p>`;
+  averageRating.innerHTML = `<p><span class="restaurant__strong-text">Rating: </span>${average} (${restaurant.reviews.length} reviews)</p>`;
 
   const address = document.getElementById('restaurant-address');
   address.innerHTML = `<p>${restaurant.address}</p>`;
-  // address.innerHTML = `<span class="restaurant__overview__strong-text"> Address: </span>${restaurant.address}`;
+  // address.innerHTML = `<span class="restaurant__hours__strong-text"> Address: </span>${restaurant.address}`;
 
   const image = document.getElementById('restaurant-img');
   // Add average rating and total reviews to the info on top
   image.setAttribute('alt', `Photo of ${restaurant.name}`);
-  image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  image.src = `img/cover_img/${restaurant.id}.jpg`;
+  // image.src = DBHelper.imageUrlForRestaurant(restaurant);
 
   const cuisine = document.getElementById('restaurant-cuisine');
   cuisine.innerHTML = restaurant.cuisine_type;
@@ -122,7 +123,7 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
     const row = document.createElement('tr');
 
     const day = document.createElement('td');
-    day.className = 'restaurant__overview__hours--day'
+    day.className = 'restaurant__hours__table--day'
     day.innerHTML = key;
     row.appendChild(day);
 
@@ -140,7 +141,7 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
 fillReviewsHTML = (reviews = self.restaurant.reviews) => {
   const container = document.getElementById('reviews-container');
   const title = document.createElement('h3');
-  title.className = 'reviews__heading'
+  title.className = 'restaurant__heading-3'
   title.innerHTML = 'Reviews';
   container.appendChild(title);
 
