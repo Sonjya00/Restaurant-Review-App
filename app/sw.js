@@ -23,6 +23,16 @@ let urlsToCache = [
 	'img/8.jpg',
 	'img/9.jpg',
 	'img/10.jpg',
+	'img/cover/1.jpg',
+	'img/cover/2.jpg',
+	'img/cover/3.jpg',
+	'img/cover/4.jpg',
+	'img/cover/5.jpg',
+	'img/cover/6.jpg',
+	'img/cover/7.jpg',
+	'img/cover/8.jpg',
+	'img/cover/9.jpg',
+	'img/cover/10.jpg',
 ];
 
 self.addEventListener('install', event => {

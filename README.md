@@ -40,9 +40,7 @@ A service worker is used to cache the requests to all of the site’s assets, so
 
 ## Mobile version
 
-![index](screenshots/index_mobile.png)
-
-![index](screenshots/restaurant_mobile.png)
+![index](screenshots/index_mobile.png) ![index](screenshots/restaurant_mobile.png)
 
 ## Desktop version
 
