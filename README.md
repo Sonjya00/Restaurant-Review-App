@@ -38,6 +38,18 @@ The app has two pages: the first one is the home page, which displays multiple r
 
 A service worker is used to cache the requests to all of the site’s assets, so that any page that has been visited by a user will be accessible when the user is offline.
 
+## Mobile version
+
+![index](screenshots/index_mobile.png)
+
+![index](screenshots/restaurant_mobile.png)
+
+## Desktop version
+
+![index](screenshots/index_desktop.png)
+
+![restaurant](screenshots/restaurant_desktop.png)
+
 ## Dependencies:
 
 * [Leafletjs](https://leafletjs.com/);
