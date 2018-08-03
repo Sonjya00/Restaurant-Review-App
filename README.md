@@ -40,13 +40,13 @@ A service worker is used to cache the requests to all of the site’s assets, so
 
 ## Mobile version
 
-![index](screenshots/index_mobile.png) ![index](screenshots/restaurant_mobile.png)
+![index](screenshots/index_mobile.jpg) ![index](screenshots/restaurant_mobile.jpg)
 
 ## Desktop version
 
-![index](screenshots/index_desktop.png)
+![index](screenshots/index_desktop.jpg)
 
-![restaurant](screenshots/restaurant_desktop.png)
+![restaurant](screenshots/restaurant_desktop.jpg)
 
 ## Dependencies:
 
