@@ -97,7 +97,6 @@ body {
     text-transform: uppercase; }
   .filters__select {
     background-color: #fff;
-    border: 1px solid #f3f3f3;
     font-size: 1.6rem;
     height: 3.5rem;
     letter-spacing: 0;
@@ -129,8 +128,6 @@ body {
   border-radius: .8rem;
   box-shadow: 2px 2px 1rem rgba(0, 0, 0, 0.2);
   display: inline-block;
-  min-height: 38rem;
-  padding: 0 0 2.5rem;
   text-align: center;
   transition: all .2s; }
   .restaurant-box:hover {
@@ -165,7 +162,7 @@ body {
     margin: 0; }
   .restaurant-box__more-btn, .restaurant-box__more-btn:focus {
     background-image: linear-gradient(to bottom, #f59600, #ff6100);
-    border: 1px solid #eee;
+    border: 1px solid #ddd;
     border-radius: .5rem;
     box-shadow: 2px 2px 1rem rgba(0, 0, 0, 0.2);
     display: inline-block;
@@ -286,10 +283,10 @@ body {
       color: #20679d;
       font-weight: bold; }
 
-.map-restaurant__container {
+.map-restaurant {
   display: block;
   border-radius: 20px 0 0 0; }
-  .map-restaurant__container .restaurant__address {
+  .map-restaurant__address {
     border: 1px solid #aaa;
     border-radius: 20px 0 0 0;
     background-image: linear-gradient(to bottom, #444, #252831);
@@ -297,7 +294,8 @@ body {
     border-top: none;
     text-align: center;
     margin: 0; }
-  .map-restaurant__container .map-restaurant {
+  .map-restaurant__map {
+    max-height: none;
     border: 1px solid #aaa; }
 
 /* ====================== Reviews section ====================== */
@@ -390,8 +388,10 @@ html {
 
 /* ====================== Restaurant Listing ====================== */
 .restaurant-box {
-  max-width: 80%;
-  margin: 5%; }
+  margin: 2rem;
+  max-width: 85%;
+  min-height: 38rem;
+  padding: 0 0 2.5rem; }
 
 /* ====================== 2nd page - Restaurant Details ====================== */
 .restaurant__heading-2 {
@@ -422,17 +422,17 @@ html {
   order: 2; }
 
 .restaurant__hours {
-  margin: 0 1rem;
-  padding: 0 1rem 3rem;
+  margin: 0 2rem 3rem;
   order: 4;
   width: 100%; }
 
-.map-restaurant__container {
-  margin: 0 1rem 3rem;
-  padding: 0 1rem 3rem;
+.map-restaurant {
+  margin: 0 2rem 6rem;
   order: 3;
   height: 35rem;
   width: 100%; }
+  .map-restaurant__map {
+    height: 100%; }
 
 .reviews__list__item {
   width: 100%; }
@@ -464,17 +464,18 @@ html {
       margin: .8rem 4rem 2rem;
       width: calc((100% - 18rem)/2); }
   .restaurant-box {
-    max-width: 45%;
-    margin: 2%; }
+    margin: 1rem;
+    width: calc((100% - 4rem)/2);
+    max-width: 26rem; }
   .restaurant__heading {
     letter-spacing: 3px; } }
 
 /* ====================== Third Breakpoint ====================== */
-@media screen and (min-width: 570px) {
+@media screen and (min-width: 585px) {
   .header__link {
     letter-spacing: 1.1rem; }
   .restaurant-box {
-    max-width: 26rem; } }
+    margin: 1rem 1.5rem; } }
 
 /* ====================== Fourth Breakpoint ====================== */
 @media screen and (min-width: 600px) {
@@ -489,8 +490,8 @@ html {
 /* ====================== Fifth Breakpoint ====================== */
 @media screen and (min-width: 755px) {
   .restaurant-box {
-    max-width: 30%;
-    margin: .5%; }
+    margin: 1rem .5rem;
+    width: calc((100% - 3rem)/3); }
   .restaurant__hours {
     order: 3;
     width: calc((100% - 8rem)/2);
@@ -498,36 +499,35 @@ html {
     height: 38rem;
     margin: 2rem 2rem 0;
     padding: 0; }
-  .map-restaurant__container {
+  .map-restaurant {
     order: 4;
     width: calc((100% - 8rem)/2);
     height: calc(31.5rem - 3.6rem);
     margin: 2rem 2rem 0;
     padding: 0; }
-  .map-restaurant {
-    height: 30rem;
-    overflow: hidden;
-    height: calc(31.5rem - 3.6rem); } }
-
-/* ====================== Sixth Breakpoint ====================== */
-@media screen and (min-width: 830px) {
-  .restaurant-box {
-    max-width: 25rem;
-    margin: 1rem; }
+    .map-restaurant__map {
+      height: 30rem;
+      overflow: hidden;
+      height: calc(31.5rem - 3.6rem); }
   .reviews__list__item {
     width: 85%; } }
+
+/* ====================== Sixth Breakpoint ====================== */
+@media screen and (min-width: 845px) {
+  .restaurant-box {
+    margin: 1rem; } }
 
 /* ====================== Seventh breakpoint ====================== */
 @media screen and (min-width: 980px) {
   html {
     font-size: 62.5%; }
   .restaurant-box {
-    margin: 2rem; }
+    margin: 1rem 2rem; }
   .restaurant {
     padding: 0 2rem; } }
 
 /* ====================== Eighth breakpoint ====================== */
 @media screen and (min-width: 1060px) {
   .restaurant-box {
-    max-width: 24rem;
+    width: calc((100% - 10rem)/4);
     margin: 1rem; } }

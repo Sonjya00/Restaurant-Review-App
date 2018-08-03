@@ -97,7 +97,6 @@ body {
     text-transform: uppercase; }
   .filters__select {
     background-color: #fff;
-    border: 1px solid #f3f3f3;
     font-size: 1.6rem;
     height: 3.5rem;
     letter-spacing: 0;
@@ -129,8 +128,6 @@ body {
   border-radius: .8rem;
   box-shadow: 2px 2px 1rem rgba(0, 0, 0, 0.2);
   display: inline-block;
-  min-height: 38rem;
-  padding: 0 0 2.5rem;
   text-align: center;
   transition: all .2s; }
   .restaurant-box:hover {
@@ -165,7 +162,7 @@ body {
     margin: 0; }
   .restaurant-box__more-btn, .restaurant-box__more-btn:focus {
     background-image: linear-gradient(to bottom, #f59600, #ff6100);
-    border: 1px solid #eee;
+    border: 1px solid #ddd;
     border-radius: .5rem;
     box-shadow: 2px 2px 1rem rgba(0, 0, 0, 0.2);
     display: inline-block;
@@ -286,10 +283,10 @@ body {
       color: #20679d;
       font-weight: bold; }
 
-.map-restaurant__container {
+.map-restaurant {
   display: block;
   border-radius: 20px 0 0 0; }
-  .map-restaurant__container .restaurant__address {
+  .map-restaurant__address {
     border: 1px solid #aaa;
     border-radius: 20px 0 0 0;
     background-image: linear-gradient(to bottom, #444, #252831);
@@ -297,7 +294,8 @@ body {
     border-top: none;
     text-align: center;
     margin: 0; }
-  .map-restaurant__container .map-restaurant {
+  .map-restaurant__map {
+    max-height: none;
     border: 1px solid #aaa; }
 
 /* ====================== Reviews section ====================== */

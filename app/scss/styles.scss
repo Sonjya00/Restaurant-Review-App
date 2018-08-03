@@ -37,11 +37,14 @@ $nav-height: 8rem;
 $nav-height-2: 5rem;
 
 $image-cover-width: 80rem;
-$image-cover-height: 40rem;
 /* ====================== Mixins ====================== */
 
 @mixin border-default {
 	border: 1px solid $color-p-05;
+}
+
+@mixin border-light{
+	border: 1px solid $color-p-03;
 }
 
 @mixin border-radius-top-label {
@@ -60,7 +63,6 @@ $image-cover-height: 40rem;
 
 @mixin colors-top-label {
 	background-image: linear-gradient(to bottom, $color-p-08, $color-p-07);
-	// background-color: $color-p-07;
 	color: $color-p-03;
 	border-top: none;
 }
@@ -192,7 +194,6 @@ body {
 
 	&__select {
 	  background-color: $color-white;
-	  border: 1px solid $color-p-01;
 	  font-size: $font-size-s;
 	  height: 3.5rem;
 	  letter-spacing: 0;
@@ -228,12 +229,10 @@ body {
 
 	.restaurant-box {
 	  background-color: $color-white;
-		border: 1px solid $color-p-03;
+		@include border-light;
 		border-radius: .8rem;
 		@include box-shadow-default;
 		display: inline-block;
-	  min-height: 38rem;
-	  padding: 0 0 2.5rem;
 	  text-align: center;
 		transition: all .2s;
 
@@ -276,7 +275,7 @@ body {
 		&__more-btn:focus {
 			//background-color: lighten($color-orange-1, 10%);
 			background-image: linear-gradient(to bottom, darken($color-orange-2, 2%), $color-orange-1);
-			border: 1px solid $color-p-02;
+			@include border-light;
 			border-radius: .5rem;
 			@include box-shadow-default;
 			display: inline-block;
@@ -410,21 +409,19 @@ body {
 }
 
 // MAP AREA
-.map-restaurant__container {
-	//border: none;
+.map-restaurant {
 	display: block;
 	@include border-radius-top-label;
-	//height: 40rem;
-	//margin: 1rem;
 
-	.restaurant__address {
+	&__address {
 		@include border-default;
 		@include border-radius-top-label;
 		@include colors-top-label;
 		text-align: center;
 		margin: 0;
 	}
-	.map-restaurant {
+	&__map {
+		max-height: none;
 		@include border-default;
 	}
 }
