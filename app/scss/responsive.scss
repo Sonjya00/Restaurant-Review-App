@@ -12,6 +12,7 @@ html {
   font-weight: 100;
   letter-spacing: 0;
 }
+
 .filters {
   height: 12rem;
 
@@ -35,6 +36,7 @@ html {
   font-size: $font-size-l;
   letter-spacing: 1px;
 }
+
 .restaurant__cover {
   order: 1;
   width: 100%;
@@ -58,15 +60,18 @@ html {
     width: 100%;
   }
 }
+
 .restaurant__info-title {
 	order: 2;
   width: 100%;
 }
+
 .restaurant__hours {
   margin: 0 2rem 3rem;
 	order: 4;
 	width: 100%;
 }
+
 .map-restaurant {
   height: 35rem;
   margin: 0 2rem 6rem;
@@ -76,9 +81,11 @@ html {
     height: 100%;
   }
 }
+
 .reviews__list__item {
   width: 100%;
 }
+
 .restaurant__heading-3 {
   font-size: $font-size-l;
 }

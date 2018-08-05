@@ -17,6 +17,7 @@ body {
   position: relative; }
 
 /* ====================== Navigation ====================== */
+/* === First header === */
 .header__nav {
   background-color: #252831;
   height: 8rem;
@@ -33,6 +34,7 @@ body {
 .header-secondary {
   width: 100%; }
 
+/* === Breadcrumb nav === */
 .breadcrumb {
   background-color: #cccccc;
   font-size: 1.6rem;
@@ -55,6 +57,7 @@ body {
     content: "/\00a0";
     padding: .8rem; }
 
+/* === Skip Link to skip to select area === */
 .skip-link {
   background-color: #db0045;
   color: #fff;
@@ -185,6 +188,7 @@ body {
       transform: translateY(0.1rem); }
 
 /* ====================== 2nd page - Restaurant Details ====================== */
+/* === Fonts === */
 .restaurant__heading-2, .restaurant__heading-3 {
   background: linear-gradient(to left, #db0045, #ff6100, #db0045);
   -webkit-background-clip: text;
@@ -210,6 +214,7 @@ body {
   font-weight: bold;
   text-transform: uppercase; }
 
+/* === General === */
 .restaurant {
   display: flex;
   flex-wrap: wrap;
@@ -220,6 +225,7 @@ body {
   border-bottom: 1px solid #ccc;
   border-top: 1px solid #ccc; }
 
+/* === Img Area === */
 .restaurant__cover {
   border-bottom: 1px solid #ccc;
   margin: 0 2rem;
@@ -257,6 +263,7 @@ body {
     width: 100%;
     z-index: 100; }
 
+/* === Hours Table === */
 .restaurant__hours {
   display: block;
   font-size: 1.4rem;
@@ -283,6 +290,7 @@ body {
       color: #20679d;
       font-weight: bold; }
 
+/* === Map Area === */
 .map-restaurant {
   display: block;
   border-radius: 20px 0 0 0; }
