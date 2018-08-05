@@ -93,12 +93,12 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   }
   averageRating.innerHTML = `<p><span class="restaurant__strong-text">Rating: </span>${average} (${restaurant.reviews.length} reviews)</p>`;
 
+// Add address to bar on top of the map
   const address = document.getElementById('restaurant-address');
   address.innerHTML = `<p>${restaurant.address}</p>`;
-  // address.innerHTML = `<span class="restaurant__hours__strong-text"> Address: </span>${restaurant.address}`;
 
   const image = document.getElementById('restaurant-img');
-  // Add average rating and total reviews to the info on top
+  // Add custom alt
   image.setAttribute('alt', `Photo of ${restaurant.name}`);
   // Add cropped image as cover image
   image.src = `img/cover_img/${restaurant.id}.jpg`;
@@ -166,6 +166,7 @@ createReviewHTML = (review) => {
   const li = document.createElement('li');
   li.className = 'reviews__list__item';
 
+  // Create upper bar with name and date
   const upperBar = document.createElement('div');
   upperBar.className = 'reviews__list__item-upperBar';
 
@@ -181,6 +182,7 @@ createReviewHTML = (review) => {
 
   li.appendChild(upperBar);
 
+// Create orange area for rating
   const rating = document.createElement('span');
   rating.className = 'reviews__list__item-rating';
   rating.innerHTML = `Rating: ${review.rating}`;

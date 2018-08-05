@@ -169,11 +169,13 @@ createRestaurantHTML = (restaurant) => {
 
 	const name = document.createElement('h3');
 	name.className = 'restaurant-box__name';
+	// Create ID to set an attribute "alt"
 	name.id = `heading${restaurant.id}`
 	name.innerHTML = restaurant.name;
 
 	const image = document.createElement('img');
 	image.className = 'restaurant-box__img';
+	// Add custom "alt"
 	image.setAttribute('alt', `Photo of ${restaurant.name}`);
 	image.src = DBHelper.imageUrlForRestaurant(restaurant);
 
@@ -186,19 +188,18 @@ createRestaurantHTML = (restaurant) => {
 	li.append(neighborhood);
 
 	const address = document.createElement('p');
-
 	address.innerHTML = restaurant.address;
 	address.className = 'restaurant-box__address';
 	// Add line break to make the address areas more regular
 	address.innerHTML= address.innerHTML.replace(/,/g, ", <br />");
 	li.append(address);
 
+	// Custom button
 	const more = document.createElement('a');
 	more.id = `button${restaurant.id}`;
 	more.className = 'restaurant-box__more-btn';
 	more.href = DBHelper.urlForRestaurant(restaurant);
-
-	// Add support for custom button
+	// Add support for custom button (can be triggered by spacebar)
 	more.setAttribute('role', 'button');
 	more.setAttribute('aria-labelledby', `${name.id} ${more.id}`);
 	more.innerHTML = 'View Details';

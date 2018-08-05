@@ -40,16 +40,21 @@
       </div>
 
       <div class="restaurant__hours">
-        <table id="restaurant-hours" class="restaurant__hours__table">
-          <tr>
-            <th colspan="2">Hours</th>
-          </tr>
+        <table class="restaurant__hours__table">
+          <thead>
+            <tr>
+              <th colspan="2">Hours</th>
+            </tr>
+          </thead>
+          <tbody id="restaurant-hours">
+          </tbody>
         </table>
       </div>
 
-      <div id="map-container" class="map-restaurant" aria-label="Address and Mapbox showing current restaurant's location">
+      <div id="map-container" class="map-restaurant">
         <p id="restaurant-address" class="map-restaurant__address"></p>
-        <div id="map" class="map-restaurant__map" role="application">
+        <div id="map" class="map-restaurant__map" role="application" labelledby="mapSingleLabel">
+        <div hidden id="mapSingleLabel">Address and map showing current restaurant's location"</div>
         </div>
       </div>
     </section>
