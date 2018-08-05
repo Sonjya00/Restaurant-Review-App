@@ -22,7 +22,7 @@ Convert a static webpage with no accessibility to a mobile-ready web application
 
 5. Move the `config.js` file into the `app` folder.
 
-6. In the terminal, check your python version by inputing the command `python -V`. If you have Python 2.x, start the server with  `python -m SimpleHTTPServer 8000`  (or some other port, if port 8000 is already in use.) For Python 3.x, you can use `python3 -m http.server 8000`. If you don't have Python installed, navigate to Python's [website](https://www.python.org/) to download and install the software.
+6. In the terminal, check your python version by inputing the command `python -V`. If you have Python 2.x, start the server with  `python -m SimpleHTTPServer 8000`. For Python 3.x, you can use `python3 -m http.server 8000`. If you don't have Python installed, navigate to Python's [website](https://www.python.org/) to download and install the software.
 
 7. Visit http://localhost:8000 on your browser.
 
@@ -30,13 +30,15 @@ Convert a static webpage with no accessibility to a mobile-ready web application
 
 ## Project overview
 
-The responsive design has been implemented by using CSS, Sass, media queries and Flexbox. The projects has also full accessibility with the implementation of the WAI-ARIA specifications.
+The **responsive design** has been implemented by using CSS, Sass, media queries and Flexbox. The projects has also full **accessibility** with the implementation of the WAI-ARIA specifications.
 
-The app displays data related to a series of restaurants fetched from `data/restaurants.json`. `IndexedDB.js` has this function, while `main.js` and `restaurant_info.js` are responsible for utilizing the data to create content to be injected in the homepage and in each restaurants pages DOM.
+The app displays data related to a series of restaurants fetched from a local JSON file. The app has two pages: 
+1. the first one is the home page, which displays multiple restaurants; 
+2. the second one contains detailed information about the restaurant selected from the home page. 
 
-The app has two pages: the first one is the home page, which displays multiple restaurants; the second one contains detailed information about the restaurant selected from the home page. The homepage and each restaurant page have a Mapbox map where the exact location of the restaurants is shown. In the main page, it is possible to filter the restuarants by neighborhood and cuisine type, and to select one restaurants among the results to see more detailed information about it. Each restaurant page contains the name, the picture, the hours, the address, and the reviews of the restaurant with the average rating.
+The homepage and each restaurant page have a **Mapbox map** where the exact location of the restaurants is shown. In the main page, it is possible to filter the restaurants by neighborhood and cuisine type, and to select one restaurant among the filtered results to see more detailed information about it. Each restaurant page contains the name, a picture, the hours, the address, the reviews and the rating (average and review-specific) of the restaurant selected.
 
-A service worker is used to cache the requests to all of the site’s assets, so that any page that has been visited by a user will be accessible when the user is offline.
+A **service worker** is used to cache the requests to all of the site’s assets, so that any page that has been visited by a user will be accessible when the user is offline.
 
 ## Mobile version
 

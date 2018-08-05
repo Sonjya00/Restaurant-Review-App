@@ -147,7 +147,7 @@ resetRestaurants = (restaurants) => {
 fillRestaurantsHTML = (restaurants = self.restaurants) => {
 	const ul = document.getElementById('restaurants-list');
 
-// Display message if no restaurant meet the criteria
+	// Display message if no restaurant meet the criteria
 	if (restaurants.length === 0) {
 		const noRestaurants = document.createElement('p');
 		noRestaurants.innerHTML = 'No restaurants found.';
@@ -165,12 +165,12 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
  */
 createRestaurantHTML = (restaurant) => {
 	const li = document.createElement('li');
-	li.className = 'restaurant-box'
+	li.className = 'restaurant-box';
 
 	const name = document.createElement('h3');
 	name.className = 'restaurant-box__name';
 	// Create ID to set an attribute "alt"
-	name.id = `heading${restaurant.id}`
+	name.id = `heading${restaurant.id}`;
 	name.innerHTML = restaurant.name;
 
 	const image = document.createElement('img');
@@ -183,7 +183,7 @@ createRestaurantHTML = (restaurant) => {
 	li.append(name);
 
 	const neighborhood = document.createElement('p');
-	neighborhood.className = 'restaurant-box__neighborhood'
+	neighborhood.className = 'restaurant-box__neighborhood';
 	neighborhood.innerHTML = restaurant.neighborhood;
 	li.append(neighborhood);
 
@@ -191,7 +191,7 @@ createRestaurantHTML = (restaurant) => {
 	address.innerHTML = restaurant.address;
 	address.className = 'restaurant-box__address';
 	// Add line break to make the address areas more regular
-	address.innerHTML= address.innerHTML.replace(/,/g, ", <br />");
+	address.innerHTML= address.innerHTML.replace(/,/g, ', <br />');
 	li.append(address);
 
 	// Custom button
@@ -208,7 +208,7 @@ createRestaurantHTML = (restaurant) => {
 			event.preventDefault();
 			window.location.href = more.href;
 		}
-  });
+	});
 
 	li.append(more);
 
